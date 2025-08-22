@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MLM Abogados - Asesoría Legal de Excelencia</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Estilo base con la fuente Inter */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Gris muy claro para el fondo general */
+        }
+        
+        /* Definimos los colores corporativos para fácil uso con Tailwind */
+        .bg-brand-dark { background-color: #19224d; } /* Azul marino oscuro */
+        .text-brand-dark { color: #19224d; }
+        .bg-brand-light { background-color: #ffffff; }
+        .text-brand-accent { color: #d4af37; } /* Acento dorado para un toque de elegancia */
+        .bg-brand-accent { background-color: #d4af37; }
+        .border-brand-accent { border-color: #d4af37; }
+        .hover\:bg-brand-accent-dark:hover { background-color: #c8a435; } /* Dorado un poco más oscuro para hover */
+        
+        /* Estilo para el Hero Section con la nueva imagen de fondo verificada */
+        .hero-section {
+            background-image: linear-gradient(rgba(25, 34, 77, 0.8), rgba(25, 34, 77, 0.8)), url('https://images.unsplash.com/photo-1573497491208-6b1acb260507?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Animación suave para elementos */
+        .transition-all-smooth {
+            transition: all 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- ========== HEADER ========== -->
+    <header class="bg-brand-light shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Espacio para el Logo -->
+            <div class="text-2xl font-bold text-brand-dark">
+                <!-- Reemplazar este div con la etiqueta <img> de tu logo -->
+                <div class="h-10 w-40 bg-gray-200 rounded-md flex items-center justify-center">
+                    <span class="text-sm text-gray-500">Espacio para Logo</span>
+                </div>
+            </div>
+            <nav class="hidden md:flex space-x-8 items-center">
+                <a href="#nosotros" class="text-gray-600 hover:text-brand-dark transition-all-smooth">Nosotros</a>
+                <a href="#areas" class="text-gray-600 hover:text-brand-dark transition-all-smooth">Áreas de Práctica</a>
+                <a href="#contacto" class="bg-brand-dark text-white py-2 px-5 rounded-lg hover:bg-opacity-90 transition-all-smooth">Contacto</a>
+            </nav>
+            <div class="md:hidden">
+                <button class="text-brand-dark focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========== HERO SECTION ========== -->
+    <main>
+        <section class="hero-section text-white">
+            <div class="container mx-auto px-6 py-24 md:py-40 text-center">
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 animate-fade-in-down">Asesoría Legal con Integridad y Excelencia</h1>
+                <p class="text-lg md:text-xl max-w-3xl mx-auto text-gray-200 mb-8 animate-fade-in-up">
+                    Utilizamos la ley como herramienta de transformación, protegiendo sus derechos e intereses con eficiencia, claridad y un enfoque innovador.
+                </p>
+                <a href="#contacto" class="bg-brand-accent text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-brand-accent-dark transition-all-smooth transform hover:scale-105 shadow-lg">
+                    Agendar una Consulta
+                </a>
+            </div>
+        </section>
+
+        <!-- ========== NOSOTROS (MISIÓN) ========== -->
+        <section id="nosotros" class="py-20 bg-brand-light">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+                    <div class="text-center md:text-left">
+                        <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-4">Nuestra Visión</h2>
+                        <span class="inline-block w-20 h-1 bg-brand-accent rounded mb-6"></span>
+                        <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                            En MLM ABOGADOS aspiramos a consolidarnos como una firma jurídica referente a nivel nacional e internacional, reconocida por nuestra excelencia, ética y compromiso con la justicia.
+                        </p>
+                        <p class="text-lg text-gray-700 leading-relaxed">
+                            Guiados por nuestra identidad, construimos relaciones duraderas basadas en la confianza, la transparencia y los resultados.
+                        </p>
+                    </div>
+                    <div class="flex justify-center items-center">
+                         <i class="fas fa-balance-scale text-9xl text-brand-dark opacity-10"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== ÁREAS DE PRÁCTICA ========== -->
+        <section id="areas" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-4">Áreas de Práctica</h2>
+                    <p class="text-lg text-gray-600">Ofrecemos asesoría experta en diversas materias legales desde nuestras dos sedes.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+                    <!-- Oficina Las Condes -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg border-l-4 border-brand-accent transform hover:shadow-2xl hover:-translate-y-2 transition-all-smooth">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-brand-dark text-white rounded-full h-12 w-12 flex items-center justify-center mr-4">
+                                <i class="fas fa-building text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-brand-dark">Oficina Las Condes</h3>
+                                <p class="text-gray-500">Sede Matriz</p>
+                            </div>
+                        </div>
+                        <ul class="space-y-3 text-gray-700 mt-6">
+                            <li class="flex items-start"><i class="fas fa-check text-brand-accent mt-1 mr-3"></i>Materias Civiles y Comerciales</li>
+                            <li class="flex items-start"><i class="fas fa-check text-brand-accent mt-1 mr-3"></i>Derecho Inmobiliario</li>
+                            <li class="flex items-start"><i class="fas fa-check text-brand-accent mt-1 mr-3"></i>Planificación Financiera y Tributaria</li>
+                        </ul>
+                    </div>
+                    <!-- Oficina Calera de Tango -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg border-l-4 border-brand-accent transform hover:shadow-2xl hover:-translate-y-2 transition-all-smooth">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-brand-dark text-white rounded-full h-12 w-12 flex items-center justify-center mr-4">
+                                <i class="fas fa-users text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-brand-dark">Oficina Calera de Tango</h3>
+                                <p class="text-gray-500">Sede Filial</p>
+                            </div>
+                        </div>
+                        <ul class="space-y-3 text-gray-700 mt-6">
+                            <li class="flex items-start"><i class="fas fa-check text-brand-accent mt-1 mr-3"></i>Materias de Familia</li>
+                            <li class="flex items-start"><i class="fas fa-check text-brand-accent mt-1 mr-3"></i>Derecho del Trabajo</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== CONTACTO ========== -->
+        <section id="contacto" class="py-20 bg-brand-light">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-4">Contáctenos</h2>
+                    <p class="text-lg text-gray-600">Estamos listos para escuchar su caso. Complete el formulario o contáctenos directamente.</p>
+                </div>
+                <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-10 items-start">
+                    <!-- Información de Contacto -->
+                    <div class="space-y-6">
+                        <h3 class="text-2xl font-bold text-brand-dark">Información Directa</h3>
+                        <div class="flex items-center text-lg">
+                            <i class="fas fa-user-tie text-brand-accent w-6 mr-4"></i>
+                            <div>
+                                <p class="font-bold">Nicoll Pineda Jara</p>
+                                <p class="text-gray-600">Directora Jurídica</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center text-lg">
+                            <i class="fas fa-envelope text-brand-accent w-6 mr-4"></i>
+                            <a href="mailto:npineda@mlm.com" class="text-gray-800 hover:text-brand-dark">npineda@mlm.com</a>
+                        </div>
+                        <div class="flex items-center text-lg">
+                            <i class="fas fa-phone text-brand-accent w-6 mr-4"></i>
+                            <a href="tel:+56944019879" class="text-gray-800 hover:text-brand-dark">+56 9 4401 9879</a>
+                        </div>
+                        <div class="flex items-start text-lg">
+                            <i class="fas fa-map-marked-alt text-brand-accent w-6 mr-4 mt-1"></i>
+                            <div>
+                                <p class="font-bold">Nuestras Oficinas</p>
+                                <p class="text-gray-600">Las Condes y Calera de Tango</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Espacio para Formulario -->
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-inner border border-gray-200">
+                        <h3 class="text-2xl font-bold text-brand-dark mb-6">Envíenos un mensaje</h3>
+                        <!-- 
+                            AQUÍ SE DEBE INTEGRAR EL FORMULARIO DE CONTACTO.
+                        -->
+                        <div class="space-y-4">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700">Nombre</label>
+                                <input type="text" id="name" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-brand-dark focus:border-brand-dark">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                                <input type="email" id="email" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-brand-dark focus:border-brand-dark">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700">Mensaje</label>
+                                <textarea id="message" rows="4" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-brand-dark focus:border-brand-dark"></textarea>
+                            </div>
+                            <div>
+                                <button type="submit" class="w-full bg-brand-dark text-white font-bold py-3 px-4 rounded-lg hover:bg-opacity-90 transition-all-smooth">
+                                    Enviar Mensaje
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="bg-brand-dark text-white">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <p>&copy; 2025 MLM Abogados. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- ========== BOTÓN FLOTANTE DE WHATSAPP ========== -->
+    <a href="https://wa.me/56944019879" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg transform hover:scale-110 transition-all-smooth z-40">
+        <i class="fab fa-whatsapp text-4xl"></i>
+    </a>
+
+</body>
+</html>
