@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MLM Abogados - Asesoría Legal de Excelencia</title>
+    <link rel="icon" type="image/png" href="img/favicon.png">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -43,7 +44,7 @@
         .hero-section {
             position: relative;
             overflow: hidden;
-            height: 100vh;
+            height: 90vh; /* Altura reducida */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -136,8 +137,8 @@
         <section class="hero-section text-white">
             <div class="hero-overlay"></div>
             <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" id="hero-video">
-                <!-- Video de Pexels - Libre de uso -->
-                <source src="https://videos.pexels.com/video-files/7578544/7578544-hd_1920_1080_25fps.mp4" type="video/mp4">
+                <!-- Video local -->
+                <source src="vid/hero.mp4" type="video/mp4">
             </video>
             <div class="container mx-auto px-6 text-center z-10">
                 <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 reveal-on-scroll">Asesoría Legal con Integridad y Excelencia</h1>
@@ -295,5 +296,3 @@
     </script>
 </body>
 </html>
-
-
