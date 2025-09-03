@@ -48,18 +48,11 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            background-image: url('img/hero.jpg'); /* <-- ¡Aquí pones la ruta de tu imagen! */
+            background-size: cover;
+            background-position: center;
         }
         
-        #hero-video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Clave para que el video cubra el área */
-            z-index: -100;
-            
-        }
         .hero-overlay {
             position: absolute;
             top: 0;
@@ -129,23 +122,19 @@
     </header>
 
     <main>
-        <!-- ========== HERO SECTION CON VIDEO ========== -->
-        <section class="hero-section text-white">
-            <div class="hero-overlay"></div>
-            <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" id="hero-video">
-                <!-- Video local -->
-                <source src="vid/hero.mp4" type="video/mp4">
-            </video>
-            <div class="container mx-auto px-6 text-center z-10">
-                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 reveal-on-scroll">Asesoría Legal con Integridad y Excelencia</h1>
-                <p class="text-lg md:text-xl max-w-3xl mx-auto text-gray-200 mb-8 reveal-on-scroll">
-                    Utilizamos la ley como herramienta de transformación, protegiendo sus derechos e intereses con eficiencia, claridad y un enfoque innovador.
-                </p>
-                <a href="#contacto" class="bg-custom-cta text-custom-button font-bold py-3 px-8 rounded-lg text-lg hover:bg-custom-cta-dark transform hover:scale-105 shadow-lg transition-transform duration-300 reveal-on-scroll">
-                    Agendar una Consulta
-                </a>
-            </div>
-        </section>
+    <!-- ========== HERO SECTION CON FOTO ========== -->
+    <section id="hero" class="hero-section text-white section-with-bg">
+        <div class="hero-overlay"></div>
+        <div class="container mx-auto px-6 text-center z-10">
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 reveal-on-scroll">Asesoría Legal con Integridad y Excelencia</h1>
+            <p class="text-lg md:text-xl max-w-3xl mx-auto text-gray-200 mb-8 reveal-on-scroll">
+                Utilizamos la ley como herramienta de transformación, protegiendo sus derechos e intereses con eficiencia, claridad y un enfoque innovador.
+            </p>
+            <a href="#contacto" class="bg-custom-cta text-custom-button font-bold py-3 px-8 rounded-lg text-lg hover:bg-custom-cta-dark transform hover:scale-105 shadow-lg transition-transform duration-300 reveal-on-scroll">
+                Agendar una Consulta
+            </a>
+        </div>
+    </section>
 
 <!-- ========== NOSOTROS (VISIÓN) ========== -->
 <section id="nosotros" class="py-24 text-white section-with-bg">
