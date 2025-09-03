@@ -91,11 +91,6 @@
             background-size: cover;       /* Añade esta línea */
             background-position: center;  /* Añade esta línea */
         }
-        /* Reemplaza 'URL_DE_TU_IMAGEN_AREAS.JPG' con la ruta de tu imagen */
-        #areas {
-             background-image: url('img/areas.png');
-        }
-
 
         /* --- Animaciones de Scroll --- */
         .reveal-on-scroll {
@@ -195,15 +190,21 @@
 </section>
 
         <!-- ========== ÁREAS DE PRÁCTICA ========== -->
-        <section id="areas" class="py-24 section-with-bg">
-            <div class="section-overlay"></div>
+        <section id="areas" class="py-24 relative overflow-hidden">
+        
+            <div class="absolute top-0 left-0 w-full h-full z-[-1]">
+                <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" class="w-full h-full object-cover">
+                    <source src="vid/hero.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="absolute top-0 left-0 w-full h-full bg-black/60 z-0"></div>
+        
             <div class="container mx-auto px-6 relative z-10">
                 <div class="text-center mb-16 text-white">
                     <h2 class="text-4xl md:text-5xl font-bold mb-4 reveal-on-scroll">Áreas de Práctica</h2>
                     <p class="text-xl reveal-on-scroll">Ofrecemos asesoría experta en diversas materias legales desde nuestras dos sedes.</p>
                 </div>
                 <div class="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
-                    <!-- Tarjeta con efecto "glassmorphism" -->
                     <div class="bg-white/10 backdrop-blur-lg p-8 rounded-xl shadow-lg border border-white/20 reveal-on-scroll">
                         <div class="flex items-center mb-4">
                             <div class="bg-brand-accent text-white rounded-full h-12 w-12 flex items-center justify-center mr-4">
@@ -220,9 +221,8 @@
                             <li class="flex items-start"><i class="fas fa-check text-brand-accent mt-1 mr-3"></i>Planificación Financiera y Tributaria</li>
                         </ul>
                     </div>
-                    <!-- Tarjeta con efecto "glassmorphism" -->
                     <div class="bg-white/10 backdrop-blur-lg p-8 rounded-xl shadow-lg border border-white/20 reveal-on-scroll">
-                         <div class="flex items-center mb-4">
+                        <div class="flex items-center mb-4">
                             <div class="bg-brand-accent text-white rounded-full h-12 w-12 flex items-center justify-center mr-4">
                                 <i class="fas fa-users text-xl"></i>
                             </div>
