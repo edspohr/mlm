@@ -30,7 +30,7 @@
         }
         
         /* Paleta de colores corporativos */
-        /* El color #19224d se usa consistentemente para header y footer */
+        /* El color #1c223c se usa consistentemente para header y footer */
         .bg-brand-dark { background-color: #1c223c; } /* Azul marino oscuro */
         .text-brand-dark { color: #1c223c; }
         .text-brand-accent { color: #d4af37; } /* Acento dorado */
@@ -41,7 +41,7 @@
         /* --- Estilos para Hero Section con Video --- */
         #hero {
             position: relative;
-            height: 80vh;
+            height: 80vh; /* Altura del Hero Section reducida */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -66,7 +66,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba(25, 34, 77, 0.6); /* Superposición azul oscura para legibilidad */
+            background-color: rgba(28, 34, 60, 0.6); /* Superposición azul oscura para legibilidad */
         }
 
         /* --- Estilos para Sección Unificada con Parallax --- */
@@ -84,7 +84,7 @@
             right: 0;
             bottom: 0;
             /* Opacidad reducida para mayor visibilidad de la imagen */
-            background-color: rgba(25, 34, 77, 0.70); 
+            background-color: rgba(28, 34, 60, 0.70); 
         }
         
         /* --- Animaciones de Scroll --- */
@@ -116,6 +116,7 @@
             <!-- Navegación simplificada -->
             <nav class="hidden md:flex space-x-8 items-center">
                 <a href="#nuestro-estudio" class="text-white text-lg hover:text-brand-accent transition-colors">Nuestro Estudio</a>
+                <a href="#quienes-somos" class="text-white text-lg hover:text-brand-accent transition-colors">Quiénes Somos</a>
                 <a href="#contacto" class="text-white text-lg hover:text-brand-accent transition-colors">Contacto</a>
             </nav>
             <!-- Menú móvil (funcionalidad básica) -->
@@ -149,7 +150,7 @@
     </section>
 
     <!-- ========== NUESTRO ESTUDIO (VISIÓN Y ÁREAS) ========== -->
-    <section id="nuestro-estudio" class="parallax-section py-24 text-white">
+    <section id="nuestro-estudio" class="parallax-section py-32 text-white"> {/* Altura aumentada con py-32 */}
         <div class="parallax-overlay"></div>
         <div class="container mx-auto px-6 relative z-10">
             
@@ -188,6 +189,56 @@
                         <li class="flex items-start"><i class="fas fa-check text-brand-accent mt-1 mr-4"></i>Materias de Familia</li>
                         <li class="flex items-start"><i class="fas fa-check text-brand-accent mt-1 mr-4"></i>Derecho del Trabajo</li>
                     </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== QUIÉNES SOMOS ========== -->
+    <section id="quienes-somos" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-center md:text-left reveal-on-scroll">
+                    <h2 class="text-4xl md:text-5xl font-bold text-brand-dark mb-4">Quiénes Somos</h2>
+                    <span class="inline-block w-24 h-1 bg-brand-accent rounded mb-8"></span>
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        Fundado por Nicoll Pineda, Directora Jurídica con amplia experiencia en materias inmobiliarias y civiles, buscando crear un estudio boutique que combine la solidez y respaldo con la cercanía y confianza.
+                    </p>
+                </div>
+                <div class="flex flex-col items-center reveal-on-scroll" style="transition-delay: 200ms;">
+                    <img src="https://placehold.co/200x200/e2e8f0/d4af37?text=NP" alt="Foto de Nicoll Pineda" class="w-48 h-48 rounded-full object-cover shadow-xl border-4 border-white mb-4">
+                    <h3 class="text-2xl font-bold text-brand-dark">Nicoll Pineda</h3>
+                    <a href="mailto:npineda@mlmchile.com" class="text-gray-600 hover:text-brand-accent transition-colors">npineda@mlmchile.com</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONFÍAN EN NOSOTROS ========== -->
+    <section id="confian-en-nosotros" class="py-24 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-brand-dark mb-4 reveal-on-scroll">Confían en Nosotros</h2>
+                <p class="text-xl text-gray-600 reveal-on-scroll">Unimos fuerzas con personas y empresas para alcanzar sus objetivos.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
+                <!-- Cliente 1 -->
+                <div class="text-center p-6 reveal-on-scroll">
+                    <img src="https://placehold.co/120x120/1c223c/ffffff?text=Logo" class="mx-auto h-24 w-24 rounded-full object-cover mb-4 shadow-lg" alt="Logo Cliente 1">
+                    <h4 class="text-xl font-bold text-brand-dark">Nombre Empresa/Persona</h4>
+                    <p class="text-gray-600 italic mt-2">"Una frase destacada que refleje la confianza y los resultados obtenidos."</p>
+                </div>
+                <!-- Cliente 2 -->
+                <div class="text-center p-6 reveal-on-scroll" style="transition-delay: 200ms;">
+                    <img src="https://placehold.co/120x120/d4af37/ffffff?text=Logo" class="mx-auto h-24 w-24 rounded-full object-cover mb-4 shadow-lg" alt="Logo Cliente 2">
+                    <h4 class="text-xl font-bold text-brand-dark">Nombre Empresa/Persona</h4>
+                    <p class="text-gray-600 italic mt-2">"Una frase destacada que refleje la confianza y los resultados obtenidos."</p>
+                </div>
+                <!-- Cliente 3 -->
+                <div class="text-center p-6 reveal-on-scroll" style="transition-delay: 400ms;">
+                    <img src="https://placehold.co/120x120/e2e8f0/1c223c?text=Logo" class="mx-auto h-24 w-24 rounded-full object-cover mb-4 shadow-lg" alt="Logo Cliente 3">
+                    <h4 class="text-xl font-bold text-brand-dark">Nombre Empresa/Persona</h4>
+                    <p class="text-gray-600 italic mt-2">"Una frase destacada que refleje la confianza y los resultados obtenidos."</p>
                 </div>
             </div>
         </div>
@@ -236,7 +287,7 @@
                 entries.forEach((entry, index) => {
                     if (entry.isIntersecting) {
                         // Aplica un pequeño retraso a cada elemento para una aparición escalonada
-                        entry.target.style.transitionDelay = `${index * 100}ms`;
+                        // entry.target.style.transitionDelay = `${index * 100}ms`;
                         entry.target.classList.add('visible');
                         observer.unobserve(entry.target); // Dejar de observar una vez que es visible
                     }
@@ -254,4 +305,3 @@
     </script>
 </body>
 </html>
-
