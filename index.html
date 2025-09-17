@@ -41,7 +41,7 @@
         /* --- Estilos para Hero Section con Video --- */
         #hero {
             position: relative;
-            height: 80vh; /* Altura del Hero Section reducida */
+            height: 60vh; /* Altura del Hero Section reducida */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -101,6 +101,33 @@
         /* Transiciones suaves para elementos interactivos */
         .transition-all {
             transition: all 0.3s ease-in-out;
+        }
+
+        /* --- Estilos para Botón de WhatsApp --- */
+        @keyframes pulse-whatsapp {
+            0% {
+                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 12px rgba(34, 197, 94, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+            }
+        }
+        .whatsapp-pulse {
+            animation: pulse-whatsapp 2s infinite;
+        }
+
+        .tooltip-arrow::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            margin-top: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent transparent transparent #1c223c;
         }
     </style>
 </head>
@@ -255,7 +282,7 @@
                         Contáctenos para agendar una consulta. Estamos aquí para escucharle y ofrecerle la mejor solución legal para su caso.
                     </p>
                     <a href="mailto:contacto@mlmchile.com" class="bg-brand-accent text-brand-dark font-bold py-4 px-10 rounded-lg text-xl hover:bg-brand-dark hover:text-white transform hover:scale-105 shadow-xl transition-all inline-block">
-                        Escríbenos <i class="fas fa-arrow-right ml-2"></i>
+                        Enviar un Correo <i class="fas fa-arrow-right ml-2"></i>
                     </a>
                 </div>
             </div>
@@ -275,9 +302,16 @@
     </footer>
 
     <!-- ========== BOTÓN FLOTANTE DE WHATSAPP ========== -->
-    <a href="https://wa.me/56944019879" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg transform hover:scale-110 transition-transform duration-300 z-40">
-        <i class="fab fa-whatsapp text-4xl"></i>
-    </a>
+    <div class="group fixed bottom-6 right-6 z-40 flex items-center">
+        <!-- Tooltip -->
+        <span class="absolute right-20 bg-brand-dark text-white text-sm rounded-lg px-3 py-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap tooltip-arrow">
+            Contáctanos por WhatsApp
+        </span>
+        <!-- Botón -->
+        <a href="https://wa.me/56944019879" target="_blank" rel="noopener noreferrer" class="bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg transform hover:scale-110 transition-transform duration-300 whatsapp-pulse">
+            <i class="fab fa-whatsapp text-4xl"></i>
+        </a>
+    </div>
 
     <!-- Script para Animaciones en Scroll -->
     <script>
