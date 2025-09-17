@@ -1,18 +1,14 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
+<html lang="es" class="scroll-smooth"> <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MLM Abogados - Asesoría Legal de Excelencia</title>
+    <title>MLM Abogados - Solidez, Experiencia y Cercanía</title>
     <link rel="icon" type="image/png" href="img/favicon.png">
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Font Awesome para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
@@ -21,77 +17,79 @@
         /* Estilo base con la fuente Inter */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f8fafc; /* Gris muy claro para el fondo general */
-            overflow-x: hidden; /* Prevenir scroll horizontal por las animaciones */
+            background-color: #f8fafc; 
+            overflow-x: hidden; 
         }
         
-        /* Definimos los colores corporativos para fácil uso con Tailwind */
-        .bg-brand-dark { background-color: #19224d; } /* Azul marino oscuro */
-        .text-brand-dark { color: #19224d; }
-        .bg-brand-light { background-color: #ffffff; }
-        .text-brand-accent { color: #d4af37; } /* Acento dorado para un toque de elegancia */
-        .bg-brand-accent { background-color: #d4af37; }
-        .border-brand-accent { border-color: #d4af37; }
-        .hover\:bg-brand-accent-dark:hover { background-color: #c8a435; } /* Dorado un poco más oscuro para hover */
+        /* Paleta de colores corporativos */
+        :root {
+            --brand-dark: #19224d; /* Azul marino oscuro */
+            --brand-light: #ffffff;
+            --brand-accent: #d4af37; /* Acento dorado */
+            --brand-accent-dark: #c8a435;
+        }
 
-        /* --- Colores personalizados solicitados --- */
-        .bg-custom-header { background-color: #1e233d; }
-        .text-custom-button { color: #1e233d; }
-        .bg-custom-cta { background-color: #d4af38; }
-        .hover\:bg-custom-cta-dark:hover { background-color: #c8a435; } /* Mantenemos un hover similar */
+        .bg-brand-dark { background-color: var(--brand-dark); }
+        .text-brand-dark { color: var(--brand-dark); }
+        .bg-brand-light { background-color: var(--brand-light); }
+        .text-brand-accent { color: var(--brand-accent); }
+        .bg-brand-accent { background-color: var(--brand-accent); }
+        .border-brand-accent { border-color: var(--brand-accent); }
+        .hover\:bg-brand-accent-dark:hover { background-color: var(--brand-accent-dark); }
         
-        /* --- Estilos para Foto de Fondo --- */
+        /* --- HERO CON VIDEO DE FONDO --- */
         .hero-section {
             position: relative;
-            overflow: hidden;
-            height: 80vh; /* Altura reducida */
+            height: 90vh; /* Mayor altura para más impacto */
             display: flex;
             align-items: center;
             justify-content: center;
-            background-image: url('img/hero.jpg'); /* <-- ¡Aquí pones la ruta de tu imagen! */
-            background-size: cover;
-            background-position: center;
+            overflow: hidden;
+            text-align: center;
         }
-        
+        #heroVideo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -100;
+            transform: translateX(-50%) translateY(-50%);
+            object-fit: cover; /* Asegura que el video cubra todo el espacio */
+        }
         .hero-overlay {
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba(150, 110, 40, 0.30);
-            z-index: -60;
+            background-color: rgba(25, 34, 77, 0.6); /* Overlay del color corporativo oscuro */
         }
         
-        /* --- Estilos para Secciones con Fondo y Parallax --- */
-        .section-with-bg {
-            background-size: cover;
-            background-position: center;
+        /* --- SECCIÓN UNIFICADA CON PARALLAX --- */
+        .parallax-section {
+            background-image: url('img/areas.png'); /* Imagen de fondo para la sección unificada */
             background-attachment: fixed; /* Efecto Parallax */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
             position: relative;
         }
-        .section-overlay {
+        .parallax-overlay {
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba(0, 0, 0, 0.6);
-        }
-        /* Reemplaza 'URL_DE_TU_IMAGEN_VISION.JPG' con la ruta de tu imagen */
-        #nosotros {
-            background-image: url('img/contacto.png');
-            background-size: cover;
-            background-position: center;
-            min-height: 80vh; /* <-- Añade esta línea */
-            display: flex; /* <-- Añade esta línea */
-            align-items: center; /* <-- Añade esta línea para centrar el contenido verticalmente */
+            background-color: rgba(25, 34, 77, 0.85); /* Overlay más oscuro para legibilidad */
         }
 
-        /* --- Animaciones de Scroll --- */
+        /* --- ANIMACIONES Y TRANSICIONES --- */
         .reveal-on-scroll {
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(40px);
             transition: opacity 0.8s ease-out, transform 0.8s ease-out;
             will-change: opacity, transform;
         }
@@ -99,221 +97,50 @@
             opacity: 1;
             transform: translateY(0);
         }
-        
-        .imagen-ajustable {
-            width: 100%;
-            height: auto;
-            display: block; /* Opcional, pero elimina espacios extra debajo de la imagen */
+        /* Transición suave para elementos interactivos */
+        .smooth-transition {
+            transition: all 0.3s ease-in-out;
         }
-        
     </style>
 </head>
 <body class="text-gray-800">
 
-    <!-- ========== HEADER ========== -->
-    <header class="bg-custom-header shadow-md sticky top-0 z-50">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <!-- Logo -->
-            <div>
-                <img src="img/logo.png" alt="Logo MLM Abogados" style="width: 100px; height: 100px;" class="rounded-lg">
-            </div>
+    <header class="bg-brand-dark shadow-lg sticky top-0 z-50 smooth-transition">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#" aria-label="Inicio">
+                <img src="img/logo.png" alt="Logo MLM Abogados" style="width: 90px; height: 90px;" class="rounded-lg">
+            </a>
             <nav class="hidden md:flex space-x-8 items-center">
-                <a href="#nosotros" class="text-white hover:text-gray-300">Nosotros</a>
-                <a href="#areas" class="text-white hover:text-gray-300">Áreas de Práctica</a>
-                <a href="#contacto" class="bg-custom-cta text-custom-button font-bold py-2 px-5 rounded-lg hover:bg-custom-cta-dark">Contacto</a>
+                <a href="#vision-y-areas" class="text-white text-lg hover:text-brand-accent smooth-transition">Nosotros y Áreas</a>
+                <a href="#contacto" class="bg-brand-accent text-brand-dark font-bold py-2 px-6 rounded-lg hover:bg-brand-accent-dark smooth-transition transform hover:scale-105">Contacto</a>
             </nav>
             <div class="md:hidden">
-                <button class="text-white focus:outline-none">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
+                <a href="#contacto" class="text-white focus:outline-none">
+                    <i class="fas fa-envelope text-2xl"></i>
+                </a>
             </div>
         </div>
     </header>
 
     <main>
-    <!-- ========== HERO SECTION CON FOTO ========== -->
-    <section id="hero" class="hero-section text-white section-with-bg">
+    <section id="hero" class="hero-section text-white">
         <div class="hero-overlay"></div>
-        <div class="container mx-auto px-6 text-center z-10">
-            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 reveal-on-scroll">Asesoría Legal con Integridad y Excelencia</h1>
-            <p class="text-lg md:text-xl max-w-3xl mx-auto text-gray-200 mb-8 reveal-on-scroll">
-                Utilizamos la ley como herramienta de transformación, protegiendo sus derechos e intereses con eficiencia, claridad y un enfoque innovador.
-            </p>
-            <a href="#contacto" class="bg-[#1e233d] text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-[#ffffff] hover:text-[#19224d] transform hover:scale-105 shadow-lg transition-colors duration-300 reveal-on-scroll">
-            Agendar una Consulta
-            </a>
+        <video playsinline autoplay muted loop id="heroVideo">
+            <source src="vid/hero.mp4" type="video/mp4">
+            Tu navegador no soporta videos HTML5.
+        </video>
+        <div class="container mx-auto px-6 z-10">
+            <div class="max-w-4xl mx-auto">
+                 <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 reveal-on-scroll" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.7);">
+                    Solidez, Experiencia y Cercanía
+                </h1>
+                <p class="text-lg md:text-xl max-w-3xl mx-auto text-gray-200 reveal-on-scroll" style="text-shadow: 1px 1px 4px rgba(0,0,0,0.7);">
+                    Protegemos sus derechos e intereses con asesoría legal íntegra, eficiente y personalizada.
+                </p>
+            </div>
         </div>
     </section>
 
-<!-- ========== NOSOTROS (VISIÓN) ========== -->
-<section id="nosotros" class="py-24 text-white section-with-bg">
-    <div class="section-overlay"></div>
-    <div class="container mx-auto px-6 relative z-10">
-        <div class="max-w-4xl mx-auto text-center mb-16">
-            <div class="reveal-on-scroll">
-                <!-- Puedes cambiar este ícono principal si lo deseas -->
-                <i class="fas fa-binoculars text-7xl text-brand-accent mb-6"></i>
-                <h2 class="text-4xl md:text-5xl font-bold mb-4">Nuestra Visión</h2>
-                <span class="inline-block w-24 h-1 bg-brand-accent rounded mb-8"></span>
-            </div>
-        </div>
-        
-        <!-- Contenedor para los bullet points -->
-        <div class="max-w-4xl mx-auto space-y-8">
-            <!-- Bullet 1: Excelencia y Justicia -->
-            <div class="flex items-start text-xl md:text-2xl leading-relaxed reveal-on-scroll">
-                <i class="fas fa-gavel text-brand-accent fa-fw text-3xl mr-6 mt-1"></i>
-                <span>Consolidarnos como una firma referente por nuestra <strong>excelencia, ética y compromiso</strong> con la justicia.</span>
-            </div>
-            
-            <!-- Bullet 2: Relaciones y Confianza -->
-            <div class="flex items-start text-xl md:text-2xl leading-relaxed reveal-on-scroll">
-                <i class="fas fa-handshake text-brand-accent fa-fw text-3xl mr-6 mt-1"></i>
-                <span>Construir <strong>relaciones duraderas</strong> basadas en la confianza, la transparencia y los resultados.</span>
-            </div>
-
-             <!-- Bullet 3: Protección e Innovación -->
-            <div class="flex items-start text-xl md:text-2xl leading-relaxed reveal-on-scroll">
-                <i class="fas fa-shield-alt text-brand-accent fa-fw text-3xl mr-6 mt-1"></i>
-                <span>Proteger los derechos e intereses de nuestros clientes con un <strong>enfoque innovador y personalizado</strong>.</span>
-            </div>
-
-            <!-- Bullet 4: Visión Estratégica -->
-            <div class="flex items-start text-xl md:text-2xl leading-relaxed reveal-on-scroll">
-                <i class="fas fa-eye text-brand-accent fa-fw text-3xl mr-6 mt-1"></i>
-                <span><strong>Anticiparnos a los desafíos legales</strong> del mañana con visión estratégica y vocación de servicio.</span>
-            </div>
-        </div>
-    </div>
-</section>
-
-        <!-- ========== ÁREAS DE PRÁCTICA ========== -->
-        <section id="areas" class="py-24 relative overflow-hidden">
-        
-            <div class="absolute top-0 left-0 w-full h-full z-[-1]">
-                <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" class="w-full h-full object-cover">
-                    <source src="vid/hero.mp4" type="video/mp4">
-                </video>
-            </div>
-            <div class="absolute top-0 left-0 w-full h-full bg-black/60 z-0"></div>
-        
-            <div class="container mx-auto px-6 relative z-10">
-                <div class="text-center mb-16 text-white">
-                    <h2 class="text-4xl md:text-5xl font-bold mb-4 reveal-on-scroll">Áreas de Práctica</h2>
-                    <p class="text-xl reveal-on-scroll">Ofrecemos asesoría experta en diversas materias legales desde nuestras dos sedes.</p>
-                </div>
-                <div class="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
-                    <div class="bg-white/10 backdrop-blur-lg p-8 rounded-xl shadow-lg border border-white/20 reveal-on-scroll">
-                        <div class="flex items-center mb-4">
-                            <div class="bg-brand-accent text-white rounded-full h-12 w-12 flex items-center justify-center mr-4">
-                                <i class="fas fa-building text-xl"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-2xl font-bold text-white">Oficina Las Condes</h3>
-                                <p class="text-gray-300">Sede Matriz</p>
-                            </div>
-                        </div>
-                        <ul class="space-y-3 text-gray-200 mt-6">
-                            <li class="flex items-start"><i class="fas fa-check text-brand-accent mt-1 mr-3"></i>Materias Civiles y Comerciales</li>
-                            <li class="flex items-start"><i class="fas fa-check text-brand-accent mt-1 mr-3"></i>Derecho Inmobiliario</li>
-                            <li class="flex items-start"><i class="fas fa-check text-brand-accent mt-1 mr-3"></i>Planificación Financiera y Tributaria</li>
-                        </ul>
-                    </div>
-                    <div class="bg-white/10 backdrop-blur-lg p-8 rounded-xl shadow-lg border border-white/20 reveal-on-scroll">
-                        <div class="flex items-center mb-4">
-                            <div class="bg-brand-accent text-white rounded-full h-12 w-12 flex items-center justify-center mr-4">
-                                <i class="fas fa-users text-xl"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-2xl font-bold text-white">Oficina Calera de Tango</h3>
-                                <p class="text-gray-300">Sede Filial</p>
-                            </div>
-                        </div>
-                        <ul class="space-y-3 text-gray-200 mt-6">
-                            <li class="flex items-start"><i class="fas fa-check text-brand-accent mt-1 mr-3"></i>Materias de Familia</li>
-                            <li class="flex items-start"><i class="fas fa-check text-brand-accent mt-1 mr-3"></i>Derecho del Trabajo</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ========== CONTACTO ========== -->
-        <section id="contacto" class="py-20 bg-brand-light">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12 reveal-on-scroll">
-                    <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-4">Contáctenos</h2>
-                    <p class="text-lg text-gray-600">Estamos listos para escuchar su caso.<br>Complete el formulario o contáctenos directamente.</p>
-                </div>
-                <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-10 items-start">
-                    <!-- Información de Contacto -->
-                    <div class="space-y-6 reveal-on-scroll">
-                        <h3 class="text-2xl font-bold text-brand-dark">Información Directa</h3>
-                        <div class="flex items-center text-lg"><i class="fas fa-user-tie text-brand-accent w-6 mr-4"></i><div><p class="font-bold">Nicoll Pineda Jara</p><p class="text-gray-600">Directora Jurídica</p></div></div>
-                        <div class="flex items-center text-lg"><i class="fas fa-envelope text-brand-accent w-6 mr-4"></i><a href="mailto:npineda@mlm.com" class="text-gray-800 hover:text-brand-dark">npineda@mlm.com</a></div>
-                        <div class="flex items-center text-lg"><i class="fas fa-phone text-brand-accent w-6 mr-4"></i><a href="tel:+56944019879" class="text-gray-800 hover:text-brand-dark">+56 9 4401 9879</a></div>
-                        <div class="flex items-start text-lg"><i class="fas fa-map-marked-alt text-brand-accent w-6 mr-4 mt-1"></i><div><p class="font-bold">Nuestras Oficinas</p><p class="text-gray-600">Las Condes y Calera de Tango</p></div></div>
-                    </div>
-                    
-                    <!-- Formulario -->
-                    <div class="bg-gray-50 p-8 rounded-lg shadow-inner border border-gray-200 reveal-on-scroll">
-                        <h3 class="text-2xl font-bold text-brand-dark mb-6">Envíenos un mensaje</h3>
-                        <div class="space-y-4">
-                            <div>
-                                <label for="name" class="block text-sm font-medium text-gray-700">Nombre</label>
-                                <input type="text" id="name" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-brand-dark focus:border-brand-dark">
-                            </div>
-                            <div>
-                                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                                <input type="email" id="email" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-brand-dark focus:border-brand-dark">
-                            </div>
-                            <div>
-                                <label for="message" class="block text-sm font-medium text-gray-700">Mensaje</label>
-                                <textarea id="message" rows="4" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-brand-dark focus:border-brand-dark"></textarea>
-                            </div>
-                            <div>
-                                <button type="submit" class="w-full bg-brand-dark text-white font-bold py-3 px-4 rounded-lg hover:bg-opacity-90">
-                                    Enviar Mensaje
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- ========== FOOTER ========== -->
-    <footer class="bg-brand-dark text-white">
-        <div class="container mx-auto px-6 py-8 text-center">
-            <p>&copy; 2025 MLM Abogados. Todos los derechos reservados.</p>
-        </div>
-    </footer>
-
-    <!-- ========== BOTÓN FLOTANTE DE WHATSAPP ========== -->
-    <a href="https://wa.me/56944019879" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg transform hover:scale-110 transition-transform duration-300 z-40">
-        <i class="fab fa-whatsapp text-4xl"></i>
-    </a>
-
-    <!-- Script para Animaciones en Scroll -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, {
-                threshold: 0.1 // El elemento se revela cuando el 10% es visible
-            });
-
-            const elementsToReveal = document.querySelectorAll('.reveal-on-scroll');
-            elementsToReveal.forEach(element => {
-                observer.observe(element);
-            });
-        });
-    </script>
-</body>
-</html>
+    <section id="vision-y-areas" class="parallax-section py-24 text-white">
+        <div class="parallax-overlay"></div>
+        <div class="container mx-auto px-6 relative
