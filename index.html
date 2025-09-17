@@ -1,53 +1,53 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth"> <head>
+<html lang="es">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MLM Abogados - Solidez, Experiencia y Cercanía</title>
     <link rel="icon" type="image/png" href="img/favicon.png">
     
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
+    <!-- Font Awesome para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
+    <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
 
     <style>
         /* Estilo base con la fuente Inter */
+        html {
+            scroll-behavior: smooth;
+        }
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f8fafc; 
-            overflow-x: hidden; 
+            background-color: #ffffff; /* Fondo blanco para un look más limpio */
+            color: #1a202c; /* Texto principal oscuro */
+            overflow-x: hidden; /* Prevenir scroll horizontal */
         }
         
         /* Paleta de colores corporativos */
-        :root {
-            --brand-dark: #19224d; /* Azul marino oscuro */
-            --brand-light: #ffffff;
-            --brand-accent: #d4af37; /* Acento dorado */
-            --brand-accent-dark: #c8a435;
-        }
+        .bg-brand-dark { background-color: #19224d; } /* Azul marino oscuro */
+        .text-brand-dark { color: #19224d; }
+        .text-brand-accent { color: #d4af37; } /* Acento dorado */
+        .bg-brand-accent { background-color: #d4af37; }
+        .border-brand-accent { border-color: #d4af37; }
+        .hover\:bg-brand-accent-dark:hover { background-color: #c8a435; } /* Dorado más oscuro para hover */
 
-        .bg-brand-dark { background-color: var(--brand-dark); }
-        .text-brand-dark { color: var(--brand-dark); }
-        .bg-brand-light { background-color: var(--brand-light); }
-        .text-brand-accent { color: var(--brand-accent); }
-        .bg-brand-accent { background-color: var(--brand-accent); }
-        .border-brand-accent { border-color: var(--brand-accent); }
-        .hover\:bg-brand-accent-dark:hover { background-color: var(--brand-accent-dark); }
-        
-        /* --- HERO CON VIDEO DE FONDO --- */
-        .hero-section {
+        /* --- Estilos para Hero Section con Video --- */
+        #hero {
             position: relative;
-            height: 90vh; /* Mayor altura para más impacto */
+            height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
             text-align: center;
         }
-        #heroVideo {
+        #hero-video {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -57,7 +57,7 @@
             height: auto;
             z-index: -100;
             transform: translateX(-50%) translateY(-50%);
-            object-fit: cover; /* Asegura que el video cubra todo el espacio */
+            object-fit: cover;
         }
         .hero-overlay {
             position: absolute;
@@ -65,16 +65,15 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba(25, 34, 77, 0.6); /* Overlay del color corporativo oscuro */
+            background-color: rgba(25, 34, 77, 0.6); /* Superposición azul oscura para legibilidad */
         }
-        
-        /* --- SECCIÓN UNIFICADA CON PARALLAX --- */
+
+        /* --- Estilos para Sección Unificada con Parallax --- */
         .parallax-section {
-            background-image: url('img/areas.png'); /* Imagen de fondo para la sección unificada */
-            background-attachment: fixed; /* Efecto Parallax */
-            background-position: center;
-            background-repeat: no-repeat;
+            background-image: url('img/areas.png');
             background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Efecto Parallax */
             position: relative;
         }
         .parallax-overlay {
@@ -83,10 +82,10 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba(25, 34, 77, 0.85); /* Overlay más oscuro para legibilidad */
+            background-color: rgba(25, 34, 77, 0.85); /* Capa más oscura para mejor contraste del texto */
         }
-
-        /* --- ANIMACIONES Y TRANSICIONES --- */
+        
+        /* --- Animaciones de Scroll --- */
         .reveal-on-scroll {
             opacity: 0;
             transform: translateY(40px);
@@ -97,50 +96,159 @@
             opacity: 1;
             transform: translateY(0);
         }
-        /* Transición suave para elementos interactivos */
-        .smooth-transition {
+        /* Transiciones suaves para elementos interactivos */
+        .transition-all {
             transition: all 0.3s ease-in-out;
         }
     </style>
 </head>
-<body class="text-gray-800">
+<body class="bg-white">
 
-    <header class="bg-brand-dark shadow-lg sticky top-0 z-50 smooth-transition">
+    <!-- ========== HEADER ========== -->
+    <header class="bg-brand-dark shadow-lg sticky top-0 z-50 transition-all">
         <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <a href="#" aria-label="Inicio">
-                <img src="img/logo.png" alt="Logo MLM Abogados" style="width: 90px; height: 90px;" class="rounded-lg">
+            <!-- Logo -->
+            <a href="#hero">
+                <img src="img/logo.png" alt="Logo MLM Abogados" style="width: 85px; height: 85px;" class="rounded-lg transform hover:scale-105 transition-transform">
             </a>
+            <!-- Navegación simplificada -->
             <nav class="hidden md:flex space-x-8 items-center">
-                <a href="#vision-y-areas" class="text-white text-lg hover:text-brand-accent smooth-transition">Nosotros y Áreas</a>
-                <a href="#contacto" class="bg-brand-accent text-brand-dark font-bold py-2 px-6 rounded-lg hover:bg-brand-accent-dark smooth-transition transform hover:scale-105">Contacto</a>
+                <a href="#nuestro-estudio" class="text-white text-lg hover:text-brand-accent transition-colors">Nuestro Estudio</a>
+                <a href="#contacto" class="text-white text-lg hover:text-brand-accent transition-colors">Contacto</a>
             </nav>
+            <!-- Menú móvil (funcionalidad básica) -->
             <div class="md:hidden">
-                <a href="#contacto" class="text-white focus:outline-none">
-                    <i class="fas fa-envelope text-2xl"></i>
-                </a>
+                <button class="text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
             </div>
         </div>
     </header>
 
     <main>
-    <section id="hero" class="hero-section text-white">
+    <!-- ========== HERO SECTION CON VIDEO ========== -->
+    <section id="hero">
         <div class="hero-overlay"></div>
-        <video playsinline autoplay muted loop id="heroVideo">
+        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" id="hero-video">
             <source src="vid/hero.mp4" type="video/mp4">
             Tu navegador no soporta videos HTML5.
         </video>
-        <div class="container mx-auto px-6 z-10">
-            <div class="max-w-4xl mx-auto">
-                 <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 reveal-on-scroll" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.7);">
-                    Solidez, Experiencia y Cercanía
-                </h1>
-                <p class="text-lg md:text-xl max-w-3xl mx-auto text-gray-200 reveal-on-scroll" style="text-shadow: 1px 1px 4px rgba(0,0,0,0.7);">
-                    Protegemos sus derechos e intereses con asesoría legal íntegra, eficiente y personalizada.
-                </p>
+        <div class="container mx-auto px-6 z-10 text-white">
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 reveal-on-scroll">Solidez, Experiencia y Cercanía</h1>
+            <p class="text-lg md:text-xl max-w-3xl mx-auto mb-8 reveal-on-scroll" style="transition-delay: 200ms;">
+                Protegemos sus derechos e intereses con eficiencia, claridad y un enfoque innovador.
+            </p>
+            <div class="reveal-on-scroll" style="transition-delay: 400ms;">
+                <a href="#nuestro-estudio" class="bg-brand-accent text-brand-dark font-bold py-3 px-8 rounded-lg text-lg hover:bg-white transform hover:scale-105 shadow-xl transition-all">
+                    Conozca Nuestro Estudio
+                </a>
             </div>
         </div>
     </section>
 
-    <section id="vision-y-areas" class="parallax-section py-24 text-white">
+    <!-- ========== NUESTRO ESTUDIO (VISIÓN Y ÁREAS) ========== -->
+    <section id="nuestro-estudio" class="parallax-section py-24 text-white">
         <div class="parallax-overlay"></div>
-        <div class="container mx-auto px-6 relative
+        <div class="container mx-auto px-6 relative z-10">
+            
+            <!-- Visión -->
+            <div class="max-w-4xl mx-auto text-center mb-20">
+                <div class="reveal-on-scroll">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-4">Nuestra Visión</h2>
+                    <span class="inline-block w-24 h-1 bg-brand-accent rounded mb-8"></span>
+                    <p class="text-xl text-gray-300 leading-relaxed">
+                        Buscamos consolidarnos como una firma legal referente por nuestra excelencia, ética y compromiso con la justicia, construyendo relaciones duraderas basadas en la confianza, la transparencia y los resultados.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Áreas de Práctica -->
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-16">
+                     <h2 class="text-4xl md:text-5xl font-bold mb-4 reveal-on-scroll">Áreas de Práctica</h2>
+                    <p class="text-xl text-gray-300 reveal-on-scroll">Ofrecemos asesoría experta e integral desde nuestra casa matriz.</p>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur-lg p-8 md:p-12 rounded-xl shadow-2xl border border-white/20 reveal-on-scroll">
+                    <div class="flex flex-col md:flex-row items-center mb-6">
+                        <div class="bg-brand-accent text-brand-dark rounded-full h-16 w-16 flex items-center justify-center mr-0 md:mr-6 mb-4 md:mb-0 flex-shrink-0">
+                            <i class="fas fa-landmark text-3xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-3xl font-bold text-white text-center md:text-left">Casa Matriz: Calera de Tango</h3>
+                            <p class="text-gray-300 text-center md:text-left">Asesoría legal unificada para todas sus necesidades.</p>
+                        </div>
+                    </div>
+                    <ul class="space-y-4 text-gray-200 mt-8 text-lg grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
+                        <li class="flex items-start"><i class="fas fa-check text-brand-accent mt-1 mr-4"></i>Materias Civiles y Comerciales</li>
+                        <li class="flex items-start"><i class="fas fa-check text-brand-accent mt-1 mr-4"></i>Derecho Inmobiliario</li>
+                        <li class="flex items-start"><i class="fas fa-check text-brand-accent mt-1 mr-4"></i>Planificación Financiera y Tributaria</li>
+                        <li class="flex items-start"><i class="fas fa-check text-brand-accent mt-1 mr-4"></i>Materias de Familia</li>
+                        <li class="flex items-start"><i class="fas fa-check text-brand-accent mt-1 mr-4"></i>Derecho del Trabajo</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CALL TO ACTION (CONTACTO) ========== -->
+    <section id="contacto" class="py-24 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <div class="max-w-3xl mx-auto">
+                <div class="reveal-on-scroll">
+                    <i class="fas fa-envelope-open-text text-7xl text-brand-accent mb-6"></i>
+                    <h2 class="text-4xl md:text-5xl font-bold text-brand-dark mb-4">¿Listo para dar el siguiente paso?</h2>
+                    <p class="text-xl text-gray-600 mb-10 leading-relaxed">
+                        Contáctenos para agendar una consulta. Estamos aquí para escucharle y ofrecerle la mejor solución legal para su caso.
+                    </p>
+                    <a href="mailto:contacto@mlmchile.com" class="bg-brand-accent text-brand-dark font-bold py-4 px-10 rounded-lg text-xl hover:bg-brand-dark hover:text-white transform hover:scale-105 shadow-xl transition-all inline-block">
+                        Enviar un Correo <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="bg-brand-dark text-white">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <div class="mb-4">
+                <img src="img/logo.png" alt="Logo MLM Abogados" style="width: 100px; height: 100px;" class="rounded-lg mx-auto">
+            </div>
+            <p class="mb-2">MLM Abogados | Calera de Tango, Chile.</p>
+            <p>&copy; 2025 MLM Abogados. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- ========== BOTÓN FLOTANTE DE WHATSAPP ========== -->
+    <a href="https://wa.me/56944019879" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg transform hover:scale-110 transition-transform duration-300 z-40">
+        <i class="fab fa-whatsapp text-4xl"></i>
+    </a>
+
+    <!-- Script para Animaciones en Scroll -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Configuración del Intersection Observer
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        // Aplica un pequeño retraso a cada elemento para una aparición escalonada
+                        entry.target.style.transitionDelay = `${index * 100}ms`;
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target); // Dejar de observar una vez que es visible
+                    }
+                });
+            }, {
+                threshold: 0.1 // El elemento se revela cuando el 10% es visible
+            });
+
+            // Seleccionar todos los elementos que queremos animar
+            const elementsToReveal = document.querySelectorAll('.reveal-on-scroll');
+            elementsToReveal.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>
