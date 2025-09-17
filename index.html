@@ -30,6 +30,7 @@
         }
         
         /* Paleta de colores corporativos */
+        /* El color #19224d se usa consistentemente para header y footer */
         .bg-brand-dark { background-color: #19224d; } /* Azul marino oscuro */
         .text-brand-dark { color: #19224d; }
         .text-brand-accent { color: #d4af37; } /* Acento dorado */
@@ -82,7 +83,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba(25, 34, 77, 0.85); /* Capa más oscura para mejor contraste del texto */
+            /* Opacidad reducida para mayor visibilidad de la imagen */
+            background-color: rgba(25, 34, 77, 0.70); 
         }
         
         /* --- Animaciones de Scroll --- */
@@ -179,7 +181,7 @@
                             <p class="text-gray-300 text-center md:text-left">Asesoría legal unificada para todas sus necesidades.</p>
                         </div>
                     </div>
-                    <ul class="space-y-4 text-gray-200 mt-8 text-lg grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
+                    <ul class="space-y-4 text-gray-200 mt-8 text-lg max-w-md mx-auto">
                         <li class="flex items-start"><i class="fas fa-check text-brand-accent mt-1 mr-4"></i>Materias Civiles y Comerciales</li>
                         <li class="flex items-start"><i class="fas fa-check text-brand-accent mt-1 mr-4"></i>Derecho Inmobiliario</li>
                         <li class="flex items-start"><i class="fas fa-check text-brand-accent mt-1 mr-4"></i>Planificación Financiera y Tributaria</li>
@@ -252,3 +254,4 @@
     </script>
 </body>
 </html>
+
