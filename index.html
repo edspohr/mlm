@@ -120,7 +120,8 @@
             z-index: -1;
             transform: translateX(-50%) translateY(-50%);
             object-fit: cover;
-            filter: brightness(0.8) sepia(0.2) hue-rotate(70deg) saturate(0.8); 
+            /* AJUSTE CLAVE: Eliminado sepia y hue-rotate. Solo brillo reducido para legibilidad */
+            filter: brightness(0.65); 
         }
 
         /* --- Circle Cards & Floating Blobs --- */
@@ -186,7 +187,7 @@
             <!-- Logo -->
             <a href="#hero" class="flex items-center gap-3 group">
                 <div class="bg-brand-main p-2 rounded-2xl shadow-md border border-brand-accent/40 transition-transform group-hover:scale-105 transform rotate-1 group-hover:rotate-0">
-                    <img src="img/logo.png" alt="Logo MLM Abogados" class="h-16 w-16 object-contain">
+                    <img src="img/logo.png" alt="Logo MLM Abogados" class="h-12 w-12 object-contain">
                 </div>
                 <span class="text-white font-serif font-bold text-xl tracking-wide hidden sm:block">MLM <span class="text-brand-accent">Abogados</span></span>
             </a>
@@ -221,11 +222,13 @@
             <video playsinline autoplay muted loop id="hero-video" poster="img/hero.jpg">
                 <source src="vid/hero.mp4" type="video/mp4">
             </video>
-            <div class="absolute inset-0 bg-gradient-to-b from-brand-main/40 via-brand-main/20 to-brand-main/60 z-[-1]"></div>
+            
+            <!-- AJUSTE CLAVE: Opacidad del gradiente reducida drásticamente (30%/20%) para que sea mucho más transparente -->
+            <div class="absolute inset-0 bg-gradient-to-b from-brand-main/30 via-brand-main/20 to-brand-main/80 z-[-1]"></div>
 
             <div class="container mx-auto px-6 z-10 text-white relative">
                 <!-- Separador Doodle Dorado -->
-                <div class="doodle-line reveal-on-scroll opacity-40"></div>
+                <div class="doodle-line reveal-on-scroll opacity-80"></div>
 
                 <h1 class="font-serif text-5xl md:text-7xl font-bold mb-6 leading-tight reveal-on-scroll tracking-tight drop-shadow-lg">
                     ÉTICA, EMPATÍA <br/> <span class="text-brand-accent italic font-medium">&</span> EXPERIENCIA
