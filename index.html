@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MLM Abogados - Solidez, Experiencia y Cercanía</title>
+    <title>MLM Abogados - Ética, Empatía y Experiencia</title>
     <link rel="icon" type="image/png" href="img/favicon.png">
     
     <!-- Tailwind CSS -->
@@ -12,42 +12,78 @@
     <!-- Font Awesome para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <!-- Google Fonts: Inter -->
+    <!-- Google Fonts: Playfair Display (Cálida/Profesional) & Inter (Moderna) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Configuración de Colores Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            main: '#264A35', /* Verde Scallion / Bosque Profundo */
+                            light: '#3E6B50', /* Un tono más claro para hovers */
+                            accent: '#d4af37', /* Dorado */
+                            accentDark: '#b59328',
+                            cream: '#F9F9F6', /* Fondo blanco cálido */
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
 
     <style>
-        /* Estilo base con la fuente Inter */
         html {
             scroll-behavior: smooth;
         }
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #ffffff; /* Fondo blanco para un look más limpio */
-            color: #1a202c; /* Texto principal oscuro */
-            overflow-x: hidden; /* Prevenir scroll horizontal */
+            background-color: #F9F9F6; /* Crema muy suave para calidez */
+            color: #2d3748;
+        }
+
+        /* --- Efecto Glassmorphism --- */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
         }
         
-        /* Paleta de colores corporativos */
-        /* El color #1c223c se usa consistentemente para header y footer */
-        .bg-brand-dark { background-color: #1c223c; } /* Azul marino oscuro */
-        .text-brand-dark { color: #1c223c; }
-        .text-brand-accent { color: #d4af37; } /* Acento dorado */
-        .bg-brand-accent { background-color: #d4af37; }
-        .border-brand-accent { border-color: #d4af37; }
-        .hover\:bg-brand-accent-dark:hover { background-color: #c8a435; } /* Dorado más oscuro para hover */
+        .glass-dark {
+            background: rgba(38, 74, 53, 0.85); /* Verde con transparencia */
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
 
-        /* --- Estilos para Hero Section con Video --- */
+        /* --- Hero Section --- */
         #hero {
             position: relative;
-            height: 80vh; /* Altura del Hero Section reducida */
+            min-height: 90vh;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
             text-align: center;
         }
+        
+        /* Patrón de fondo estilo "Leyes/Texto" como fallback */
+        .hero-pattern {
+            background-color: #264A35;
+            background-image: radial-gradient(#d4af37 0.5px, transparent 0.5px), radial-gradient(#d4af37 0.5px, #264A35 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+            opacity: 0.1;
+        }
+
         #hero-video {
             position: absolute;
             top: 50%;
@@ -56,285 +92,321 @@
             min-height: 100%;
             width: auto;
             height: auto;
-            z-index: -100;
+            z-index: -1;
             transform: translateX(-50%) translateY(-50%);
             object-fit: cover;
-        }
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(28, 34, 60, 0.6); /* Superposición azul oscura para legibilidad */
+            /* Filtro para oscurecer el video y que se lea el texto */
+            filter: brightness(0.6) sepia(0.2) hue-rotate(70deg) saturate(0.8); 
         }
 
-        /* --- Estilos para Sección Unificada con Parallax --- */
-        .parallax-section {
-            background-image: url('img/areas.jpeg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed; /* Efecto Parallax */
-            position: relative;
+        /* --- Circle Cards --- */
+        .circle-container {
+            transition: transform 0.3s ease;
         }
-        .parallax-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            /* Opacidad reducida para mayor visibilidad de la imagen */
-            background-color: rgba(28, 34, 60, 0.70); 
+        .circle-container:hover {
+            transform: translateY(-10px);
         }
-        
-        /* --- Animaciones de Scroll --- */
+        .circle-icon {
+            transition: all 0.3s ease;
+        }
+        .circle-container:hover .circle-icon {
+            background-color: #d4af37; /* Dorado al hover */
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        /* --- Animaciones --- */
         .reveal-on-scroll {
             opacity: 0;
-            transform: translateY(40px);
+            transform: translateY(30px);
             transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-            will-change: opacity, transform;
         }
         .reveal-on-scroll.visible {
             opacity: 1;
             transform: translateY(0);
         }
-        /* Transiciones suaves para elementos interactivos */
-        .transition-all {
-            transition: all 0.3s ease-in-out;
-        }
 
-        /* --- Estilos para Botón de WhatsApp --- */
-        @keyframes pulse-whatsapp {
-            0% {
-                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
-            }
-            70% {
-                box-shadow: 0 0 0 12px rgba(34, 197, 94, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
-            }
+        /* WhatsApp Pulse */
+        @keyframes pulse-green {
+            0% { box-shadow: 0 0 0 0 rgba(38, 74, 53, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(38, 74, 53, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(38, 74, 53, 0); }
         }
-        .whatsapp-pulse {
-            animation: pulse-whatsapp 2s infinite;
-        }
-
-        .tooltip-arrow::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 100%;
-            margin-top: -5px;
-            border-width: 5px;
-            border-style: solid;
-            border-color: transparent transparent transparent #1c223c;
+        .whatsapp-btn {
+            animation: pulse-green 2s infinite;
         }
     </style>
 </head>
-<body class="bg-white">
+<body>
 
     <!-- ========== HEADER ========== -->
-    <header class="bg-brand-dark shadow-lg sticky top-0 z-50 transition-all">
+    <header class="bg-brand-main/95 backdrop-blur-sm shadow-lg sticky top-0 z-50 transition-all border-b border-brand-accent/20">
         <div class="container mx-auto px-6 py-3 flex justify-between items-center">
             <!-- Logo -->
-            <a href="#hero">
-                <img src="img/logo.png" alt="Logo MLM Abogados" style="width: 85px; height: 85px;" class="rounded-lg transform hover:scale-105 transition-transform">
+            <a href="#hero" class="flex items-center gap-3 group">
+                <div class="bg-white p-1 rounded-full shadow-md transition-transform group-hover:scale-105">
+                    <img src="img/logo.png" alt="Logo MLM Abogados" class="h-14 w-14 object-contain">
+                </div>
+                <span class="text-white font-serif font-bold text-xl tracking-wide hidden sm:block">MLM <span class="text-brand-accent">Abogados</span></span>
             </a>
-            <!-- Navegación simplificada -->
+            
+            <!-- Navegación -->
             <nav class="hidden md:flex space-x-8 items-center">
-                <a href="#nuestro-estudio" class="text-white text-lg hover:text-brand-accent transition-colors">Nuestro Estudio</a>
-                <a href="#quienes-somos" class="text-white text-lg hover:text-brand-accent transition-colors">Quiénes Somos</a>
-                <a href="#contacto" class="text-white text-lg hover:text-brand-accent transition-colors">Contacto</a>
+                <a href="#vision" class="text-white/90 text-sm uppercase tracking-wider font-medium hover:text-brand-accent transition-colors relative group">
+                    Visión
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-accent transition-all group-hover:w-full"></span>
+                </a>
+                <a href="#pilares" class="text-white/90 text-sm uppercase tracking-wider font-medium hover:text-brand-accent transition-colors relative group">
+                    Áreas & Enfoque
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-accent transition-all group-hover:w-full"></span>
+                </a>
+                <a href="#contacto" class="bg-brand-accent text-brand-main px-5 py-2 rounded-full font-bold hover:bg-white transition-all shadow-md hover:shadow-xl transform hover:-translate-y-0.5">
+                    Contacto
+                </a>
             </nav>
-            <!-- Menú móvil (funcionalidad básica) -->
-            <div class="md:hidden">
-                <button class="text-white focus:outline-none">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
-            </div>
+
+            <!-- Menú móvil -->
+            <button class="md:hidden text-white focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
         </div>
     </header>
 
     <main>
-    <!-- ========== HERO SECTION CON VIDEO ========== -->
-    <section id="hero">
-        <div class="hero-overlay"></div>
-        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" id="hero-video">
-            <source src="vid/hero.mp4" type="video/mp4">
-            Tu navegador no soporta videos HTML5.
-        </video>
-        <div class="container mx-auto px-6 z-10 text-white">
-            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 reveal-on-scroll">Solidez, Experiencia y Cercanía</h1>
-            <p class="text-lg md:text-xl max-w-3xl mx-auto mb-8 reveal-on-scroll" style="transition-delay: 200ms;">
-                Protegemos sus derechos e intereses con eficiencia, claridad y un enfoque innovador.
-            </p>
-            <div class="reveal-on-scroll" style="transition-delay: 400ms;">
-                <a href="#nuestro-estudio" class="bg-brand-accent text-brand-dark font-bold py-3 px-8 rounded-lg text-lg hover:bg-white transform hover:scale-105 shadow-xl transition-all">
-                    Conozca Nuestro Estudio
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== NUESTRO ESTUDIO (VISIÓN Y ÁREAS) ========== -->
-    <section id="nuestro-estudio" class="parallax-section py-32 text-white">
-        <div class="parallax-overlay"></div>
-        <div class="container mx-auto px-6 relative z-10">
+        <!-- ========== HERO SECTION ========== -->
+        <section id="hero">
+            <!-- Placeholder de Fondo (Simulando textura legal hasta que se suba el video) -->
+            <div class="absolute inset-0 bg-brand-main hero-pattern z-[-2]"></div>
             
-            <!-- Visión -->
-            <div class="max-w-4xl mx-auto text-center mb-20">
-                <div class="reveal-on-scroll">
-                    <h2 class="text-4xl md:text-5xl font-bold mb-4">Nuestra Visión</h2>
-                    <span class="inline-block w-24 h-1 bg-brand-accent rounded mb-8"></span>
-                    <p class="text-xl text-gray-300 leading-relaxed">
-                        Buscamos consolidarnos como una firma legal referente por nuestra excelencia, ética y compromiso con la justicia, construyendo relaciones duraderas basadas en la confianza, la transparencia y los resultados.
-                    </p>
-                </div>
-            </div>
+            <!-- Video Background (Descomentar y ajustar src cuando tengas el video listo) -->
+            <video playsinline autoplay muted loop id="hero-video" poster="img/hero.jpg">
+                <source src="vid/hero.mp4" type="video/mp4">
+            </video>
+            
+            <!-- Overlay Gradiente para legibilidad -->
+            <div class="absolute inset-0 bg-gradient-to-b from-brand-main/80 via-brand-main/60 to-brand-main/90 z-[-1]"></div>
 
-            <!-- Áreas de Práctica -->
-            <div class="max-w-5xl mx-auto">
-                <div class="text-center mb-16">
-                     <h2 class="text-4xl md:text-5xl font-bold mb-4 reveal-on-scroll">Áreas de Práctica</h2>
-                    <p class="text-xl text-gray-300 reveal-on-scroll">Ofrecemos asesoría experta e integral desde nuestra casa matriz.</p>
-                </div>
+            <div class="container mx-auto px-6 z-10 text-white relative">
+                <!-- Elemento decorativo -->
+                <div class="w-20 h-1 bg-brand-accent mx-auto mb-8 reveal-on-scroll"></div>
 
-                <div class="bg-white/10 backdrop-blur-lg p-8 md:p-12 rounded-xl shadow-2xl border border-white/20 reveal-on-scroll">
-                    <div class="flex flex-col md:flex-row items-center mb-6">
-                        <div class="bg-brand-accent text-brand-dark rounded-full h-16 w-16 flex items-center justify-center mr-0 md:mr-6 mb-4 md:mb-0 flex-shrink-0">
-                            <i class="fas fa-landmark text-3xl"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-3xl font-bold text-white text-center md:text-left">Casa Matriz: Calera de Tango</h3>
-                            <p class="text-gray-300 text-center md:text-left">Asesoría legal unificada para todas sus necesidades.</p>
-                        </div>
-                    </div>
-                    <ul class="space-y-4 text-gray-200 mt-8 text-lg max-w-md mx-auto">
-                        <li class="flex items-start"><i class="fas fa-check text-brand-accent mt-1 mr-4"></i>Materias Civiles y Comerciales</li>
-                        <li class="flex items-start"><i class="fas fa-check text-brand-accent mt-1 mr-4"></i>Derecho Inmobiliario</li>
-                        <li class="flex items-start"><i class="fas fa-check text-brand-accent mt-1 mr-4"></i>Planificación Financiera y Tributaria</li>
-                        <li class="flex items-start"><i class="fas fa-check text-brand-accent mt-1 mr-4"></i>Materias de Familia</li>
-                        <li class="flex items-start"><i class="fas fa-check text-brand-accent mt-1 mr-4"></i>Derecho del Trabajo</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== QUIÉNES SOMOS ========== -->
-    <section id="quienes-somos" class="py-24 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-                <div class="text-center md:text-left reveal-on-scroll">
-                    <h2 class="text-4xl md:text-5xl font-bold text-brand-dark mb-4">Quiénes Somos</h2>
-                    <span class="inline-block w-24 h-1 bg-brand-accent rounded mb-8"></span>
-                    <p class="text-lg text-gray-600 leading-relaxed">
-                        Fundado por Nicoll Pineda, Directora Jurídica con amplia experiencia en materias inmobiliarias y civiles, buscando crear un estudio boutique que combine la solidez y respaldo con la cercanía y confianza.
-                    </p>
-                </div>
-                <div class="flex flex-col items-center reveal-on-scroll" style="transition-delay: 200ms;">
-                    <img src="https://placehold.co/200x200/e2e8f0/d4af37?text=NP" alt="Foto de Nicoll Pineda" class="w-48 h-48 rounded-full object-cover shadow-xl border-4 border-white mb-4">
-                    <h3 class="text-2xl font-bold text-brand-dark">Nicoll Pineda</h3>
-                    <a href="mailto:npineda@mlmchile.com" class="text-gray-600 hover:text-brand-accent transition-colors">npineda@mlmchile.com</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== CONFÍAN EN NOSOTROS ========== -->
-    <section id="confian-en-nosotros" class="py-24 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold text-brand-dark mb-4 reveal-on-scroll">Confían en Nosotros</h2>
-                <p class="text-xl text-gray-600 reveal-on-scroll">Unimos fuerzas con personas y empresas para alcanzar sus objetivos.</p>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
-                <!-- Cliente 1 -->
-                <div class="text-center p-6 reveal-on-scroll">
-                    <img src="https://placehold.co/120x120/1c223c/ffffff?text=Logo" class="mx-auto h-24 w-24 rounded-full object-cover mb-4 shadow-lg" alt="Logo Cliente 1">
-                    <h4 class="text-xl font-bold text-brand-dark">Nombre Empresa/Persona</h4>
-                    <p class="text-gray-600 italic mt-2">"Una frase destacada que refleje la confianza y los resultados obtenidos."</p>
-                </div>
-                <!-- Cliente 2 -->
-                <div class="text-center p-6 reveal-on-scroll" style="transition-delay: 200ms;">
-                    <img src="https://placehold.co/120x120/d4af37/ffffff?text=Logo" class="mx-auto h-24 w-24 rounded-full object-cover mb-4 shadow-lg" alt="Logo Cliente 2">
-                    <h4 class="text-xl font-bold text-brand-dark">Nombre Empresa/Persona</h4>
-                    <p class="text-gray-600 italic mt-2">"Una frase destacada que refleje la confianza y los resultados obtenidos."</p>
-                </div>
-                <!-- Cliente 3 -->
-                <div class="text-center p-6 reveal-on-scroll" style="transition-delay: 400ms;">
-                    <img src="https://placehold.co/120x120/e2e8f0/1c223c?text=Logo" class="mx-auto h-24 w-24 rounded-full object-cover mb-4 shadow-lg" alt="Logo Cliente 3">
-                    <h4 class="text-xl font-bold text-brand-dark">Nombre Empresa/Persona</h4>
-                    <p class="text-gray-600 italic mt-2">"Una frase destacada que refleje la confianza y los resultados obtenidos."</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== CALL TO ACTION (CONTACTO) ========== -->
-    <section id="contacto" class="py-24 bg-white">
-        <div class="container mx-auto px-6 text-center">
-            <div class="max-w-3xl mx-auto">
-                <div class="reveal-on-scroll">
-                    <i class="fas fa-envelope-open-text text-7xl text-brand-accent mb-6"></i>
-                    <h2 class="text-4xl md:text-5xl font-bold text-brand-dark mb-4">¿Listo para dar el siguiente paso?</h2>
-                    <p class="text-xl text-gray-600 mb-10 leading-relaxed">
-                        Contáctenos para agendar una consulta. Estamos aquí para escucharle y ofrecerle la mejor solución legal para su caso.
-                    </p>
-                    <a href="mailto:contacto@mlmchile.com" class="bg-brand-accent text-brand-dark font-bold py-4 px-10 rounded-lg text-xl hover:bg-brand-dark hover:text-white transform hover:scale-105 shadow-xl transition-all inline-block">
-                        Enviar un Correo <i class="fas fa-arrow-right ml-2"></i>
+                <h1 class="font-serif text-5xl md:text-7xl font-bold mb-6 leading-tight reveal-on-scroll tracking-tight drop-shadow-lg">
+                    ÉTICA, EMPATÍA <br/> <span class="text-brand-accent italic font-medium">&</span> EXPERIENCIA
+                </h1>
+                
+                <p class="font-sans text-lg md:text-2xl max-w-4xl mx-auto mb-10 text-gray-100 font-light leading-relaxed reveal-on-scroll" style="transition-delay: 200ms;">
+                    "Nos mueve proteger sus derechos desde la perspectiva de género: nos abocamos a <strong class="text-white font-semibold">Derecho de Familia</strong>, ley antidiscriminación, <strong class="text-white font-semibold">Ley TEA</strong> y afines."
+                </p>
+                
+                <div class="flex flex-col sm:flex-row justify-center gap-4 reveal-on-scroll" style="transition-delay: 400ms;">
+                    <a href="#pilares" class="bg-brand-accent text-brand-main font-bold py-4 px-8 rounded-lg text-lg hover:bg-white shadow-lg transition-all transform hover:scale-105">
+                        Nuestros Servicios
+                    </a>
+                    <a href="#contacto" class="border-2 border-white text-white font-bold py-4 px-8 rounded-lg text-lg hover:bg-white hover:text-brand-main shadow-lg transition-all">
+                        Agendar Consulta
                     </a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- ========== SECCIÓN PILARES (Los 3 Círculos) ========== -->
+        <section id="pilares" class="py-24 relative overflow-hidden">
+            <!-- Fondo decorativo suave -->
+            <div class="absolute top-0 left-0 w-full h-full bg-brand-cream opacity-50 z-[-1]"></div>
+            <div class="absolute -right-40 top-20 w-96 h-96 bg-brand-accent/10 rounded-full blur-3xl"></div>
+            <div class="absolute -left-40 bottom-20 w-96 h-96 bg-brand-main/10 rounded-full blur-3xl"></div>
+
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-20 reveal-on-scroll">
+                    <span class="text-brand-accent font-bold tracking-widest uppercase text-sm">Nuestro Enfoque</span>
+                    <h2 class="font-serif text-4xl md:text-5xl font-bold text-brand-main mt-2 mb-4">Áreas de Práctica</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Un abordaje integral que pone a las personas y sus derechos en el centro.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-14 max-w-7xl mx-auto">
+                    
+                    <!-- Círculo 1: Cliente -->
+                    <div class="circle-container text-center group reveal-on-scroll">
+                        <div class="relative mx-auto w-48 h-48 mb-8">
+                            <div class="absolute inset-0 bg-brand-main rounded-full opacity-5 group-hover:scale-110 transition-transform duration-500"></div>
+                            <div class="circle-icon w-full h-full rounded-full border-2 border-brand-main/20 bg-white flex items-center justify-center shadow-xl z-10 relative">
+                                <i class="fas fa-hand-holding-heart text-6xl text-brand-main"></i>
+                            </div>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-brand-main mb-4">Cliente</h3>
+                        <div class="h-1 w-12 bg-brand-accent mx-auto mb-4"></div>
+                        <p class="text-gray-600 leading-relaxed px-4">
+                            Con acompañamiento, lato conocimiento y experiencia interdisciplinaria; siempre promoviendo el <strong>consentimiento informado</strong> para que pueda tomar la mejor decisión.
+                        </p>
+                    </div>
+
+                    <!-- Círculo 2: Familias -->
+                    <div class="circle-container text-center group reveal-on-scroll" style="transition-delay: 150ms;">
+                        <div class="relative mx-auto w-48 h-48 mb-8">
+                            <div class="absolute inset-0 bg-brand-main rounded-full opacity-5 group-hover:scale-110 transition-transform duration-500"></div>
+                            <div class="circle-icon w-full h-full rounded-full border-2 border-brand-main/20 bg-white flex items-center justify-center shadow-xl z-10 relative">
+                                <i class="fas fa-users text-6xl text-brand-main"></i>
+                            </div>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-brand-main mb-4">Familias</h3>
+                        <div class="h-1 w-12 bg-brand-accent mx-auto mb-4"></div>
+                        <p class="text-gray-600 leading-relaxed px-4">
+                            Representación extrajudicial y asesorías a familias ante situaciones de falta de inclusión en <strong>educación y salud</strong> de NNA, y los derechos laborales que los protegen.
+                        </p>
+                    </div>
+
+                    <!-- Círculo 3: Corporativo -->
+                    <div class="circle-container text-center group reveal-on-scroll" style="transition-delay: 300ms;">
+                        <div class="relative mx-auto w-48 h-48 mb-8">
+                            <div class="absolute inset-0 bg-brand-main rounded-full opacity-5 group-hover:scale-110 transition-transform duration-500"></div>
+                            <div class="circle-icon w-full h-full rounded-full border-2 border-brand-main/20 bg-white flex items-center justify-center shadow-xl z-10 relative">
+                                <i class="fas fa-briefcase text-6xl text-brand-main"></i>
+                            </div>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-brand-main mb-4">Corporativo</h3>
+                        <div class="h-1 w-12 bg-brand-accent mx-auto mb-4"></div>
+                        <p class="text-gray-600 leading-relaxed px-4">
+                            Coaching, asesorías y auditorías para implementación de <strong>Ley Karin y Ley TEA</strong>, confección de protocolos y representación judicial y extrajudicial.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== SECCIÓN VISIÓN Y NIÑOS (Imagen Parallax) ========== -->
+        <!-- Usamos una de las fotos de los niños proporcionada -->
+        <section id="vision" class="relative py-32 bg-fixed bg-cover bg-center" style="background-image: url('img/vision.jpg');">
+            <div class="absolute inset-0 bg-brand-main/80 backdrop-blur-[2px]"></div> <!-- Overlay verde bosque -->
+            
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="max-w-4xl mx-auto glass-dark p-10 md:p-16 rounded-2xl text-center shadow-2xl border border-white/10 reveal-on-scroll">
+                    <i class="fas fa-quote-left text-4xl text-brand-accent mb-6 opacity-50"></i>
+                    <h2 class="font-serif text-3xl md:text-4xl font-bold text-white mb-8 leading-snug">
+                        "Buscamos consolidarnos como un referente por nuestra excelencia y compromiso, construyendo relaciones basadas en la confianza."
+                    </h2>
+                    <p class="text-brand-accent text-lg font-medium tracking-wider uppercase">Calera de Tango, Chile</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== QUIÉNES SOMOS ========== -->
+        <section id="quienes-somos" class="py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row items-center gap-12 md:gap-20 max-w-6xl mx-auto">
+                    
+                    <!-- Foto o Imagen representativa -->
+                    <div class="w-full md:w-1/2 reveal-on-scroll">
+                        <div class="relative">
+                            <div class="absolute inset-0 bg-brand-accent transform translate-x-4 translate-y-4 rounded-xl"></div>
+                            <!-- Usando la otra foto de los niños para evocar familia/neurodivergencia o placeholder de perfil -->
+                            <img src="img/areas.jpeg" alt="Familia y Derechos" class="relative rounded-xl shadow-2xl w-full object-cover h-[400px] grayscale hover:grayscale-0 transition-all duration-700">
+                        </div>
+                    </div>
+
+                    <!-- Texto -->
+                    <div class="w-full md:w-1/2 reveal-on-scroll" style="transition-delay: 200ms;">
+                        <h2 class="font-serif text-4xl font-bold text-brand-main mb-6">Nuestra Fundadora</h2>
+                        <div class="h-1 w-20 bg-brand-accent mb-8"></div>
+                        
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-16 h-16 bg-brand-main text-brand-accent rounded-full flex items-center justify-center text-2xl font-serif font-bold">NP</div>
+                            <div>
+                                <h3 class="text-xl font-bold text-brand-main">Nicoll Pineda</h3>
+                                <p class="text-gray-500 text-sm">Socia Fundadora</p>
+                            </div>
+                        </div>
+
+                        <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                            Con una sólida trayectoria en materias inmobiliarias y civiles, fundó este estudio con un propósito claro: combinar la solidez técnica con la calidez humana necesaria en temas tan sensibles como el Derecho de Familia y la Neurodivergencia.
+                        </p>
+                        <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                            Entendemos que detrás de cada caso hay historias de vida que merecen ser escuchadas y protegidas.
+                        </p>
+
+                        <a href="mailto:npineda@mlmchile.com" class="inline-flex items-center text-brand-main font-bold hover:text-brand-accent transition-colors group">
+                            <i class="far fa-envelope mr-2 group-hover:animate-bounce"></i> npineda@mlmchile.com
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== CALL TO ACTION (CONTACTO) ========== -->
+        <section id="contacto" class="py-24 bg-brand-cream relative">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row reveal-on-scroll">
+                    <div class="bg-brand-main text-white p-10 md:w-2/5 flex flex-col justify-center items-center text-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-brand-accent opacity-10 pattern-dots"></div>
+                        <i class="fas fa-balance-scale text-6xl mb-6 text-brand-accent"></i>
+                        <h3 class="font-serif text-2xl font-bold mb-2">Hablemos</h3>
+                        <p class="text-white/80 text-sm">Su tranquilidad es nuestra prioridad.</p>
+                    </div>
+                    
+                    <div class="p-10 md:w-3/5 flex flex-col justify-center">
+                        <h2 class="font-serif text-3xl font-bold text-brand-main mb-4">¿Necesita asesoría legal?</h2>
+                        <p class="text-gray-600 mb-8">
+                            Contáctenos para agendar una consulta especializada en temas de familia, Ley TEA o asesoría corporativa.
+                        </p>
+                        
+                        <div class="space-y-4">
+                            <a href="mailto:contacto@mlmchile.com" class="block w-full bg-brand-main text-white text-center font-bold py-4 rounded-lg hover:bg-brand-light transition-colors">
+                                Enviar Correo
+                            </a>
+                            <a href="https://wa.me/56944019879" target="_blank" class="block w-full border-2 border-brand-main text-brand-main text-center font-bold py-4 rounded-lg hover:bg-brand-main hover:text-white transition-colors">
+                                Contactar por WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- ========== FOOTER ========== -->
-    <footer class="bg-brand-dark text-white">
-        <div class="container mx-auto px-6 py-8 text-center">
-            <div class="mb-4">
-                <img src="img/logo.png" alt="Logo MLM Abogados" style="width: 100px; height: 100px;" class="rounded-lg mx-auto">
+    <footer class="bg-brand-main text-white py-12 border-t-4 border-brand-accent">
+        <div class="container mx-auto px-6 text-center">
+            <div class="mb-6 bg-white/10 p-4 rounded-full inline-block backdrop-blur-sm">
+                <img src="img/logo.png" alt="Logo MLM" style="height: 60px; width: auto; filter: brightness(0) invert(1);">
             </div>
-            <p class="mb-2">MLM Abogados | Calera de Tango, Chile.</p>
-            <p>&copy; 2025 MLM Abogados. Todos los derechos reservados.</p>
+            <p class="text-brand-accent font-serif text-lg mb-2">Ética, Empatía y Experiencia</p>
+            <p class="text-gray-400 text-sm">MLM Abogados | Calera de Tango, Chile.</p>
+            <div class="mt-8 text-xs text-gray-500">
+                &copy; 2025 MLM Abogados. Todos los derechos reservados.
+            </div>
         </div>
     </footer>
 
     <!-- ========== BOTÓN FLOTANTE DE WHATSAPP ========== -->
-    <div class="group fixed bottom-6 right-6 z-40 flex items-center">
-        <!-- Tooltip -->
-        <span class="absolute right-20 bg-brand-dark text-white text-sm rounded-lg px-3 py-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap tooltip-arrow">
-            Contáctanos por WhatsApp
-        </span>
-        <!-- Botón -->
-        <a href="https://wa.me/56944019879" target="_blank" rel="noopener noreferrer" class="bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg transform hover:scale-110 transition-transform duration-300 whatsapp-pulse">
-            <i class="fab fa-whatsapp text-4xl"></i>
+    <div class="fixed bottom-6 right-6 z-50">
+        <a href="https://wa.me/56944019879" target="_blank" rel="noopener noreferrer" class="whatsapp-btn flex items-center justify-center w-16 h-16 bg-green-600 rounded-full text-white text-3xl shadow-2xl hover:scale-110 transition-transform hover:bg-green-500">
+            <i class="fab fa-whatsapp"></i>
         </a>
     </div>
 
-    <!-- Script para Animaciones en Scroll -->
+    <!-- Scripts -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Configuración del Intersection Observer
             const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry, index) => {
+                entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        // Aplica un pequeño retraso a cada elemento para una aparición escalonada
-                        // entry.target.style.transitionDelay = `${index * 100}ms`;
                         entry.target.classList.add('visible');
-                        observer.unobserve(entry.target); // Dejar de observar una vez que es visible
                     }
                 });
-            }, {
-                threshold: 0.1 // El elemento se revela cuando el 10% es visible
-            });
+            }, { threshold: 0.1 });
 
-            // Seleccionar todos los elementos que queremos animar
-            const elementsToReveal = document.querySelectorAll('.reveal-on-scroll');
-            elementsToReveal.forEach(element => {
-                observer.observe(element);
-            });
+            document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+            
+            // Copiar al portapapeles (si fuera necesario en el futuro)
+            window.copyToClipboard = (text) => {
+                const el = document.createElement('textarea');
+                el.value = text;
+                document.body.appendChild(el);
+                el.select();
+                document.execCommand('copy');
+                document.body.removeChild(el);
+                alert('Copiado al portapapeles');
+            };
         });
     </script>
 </body>
