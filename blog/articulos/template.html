@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- SEO Meta Tags Placeholders -->
+    <title>Título del Artículo | MLM Abogados</title>
+    <meta
+      name="description"
+      content="Descripción breve del artículo para SEO."
+    />
+    <meta name="keywords" content="Ley TEA, Abogados, Chile, familia, salud" />
+
+    <link rel="icon" type="image/png" href="../../img/favicon.png" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Quicksand:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Configuración de Colores Tailwind (Igual a index.html) -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                main: "#264A35",
+                light: "#3E6B50",
+                accent: "#d4af37",
+                accentDark: "#b59328",
+                cream: "#F9F9F6",
+                softGreen: "#E8F5E9",
+              },
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              serif: ["Playfair Display", "serif"],
+              soft: ["Quicksand", "sans-serif"],
+            },
+            borderRadius: {
+              xl: "1rem",
+              "2xl": "1.5rem",
+              "3xl": "2rem",
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      body {
+        background-color: #f9f9f6;
+        color: #2d3748;
+      }
+      .glass-nav {
+        background: rgba(38, 74, 53, 0.95);
+        backdrop-filter: blur(10px);
+      }
+      .prose h2 {
+        font-family: "Playfair Display", serif;
+        color: #264a35;
+        margin-top: 2em;
+        margin-bottom: 0.5em;
+        font-weight: 700;
+        font-size: 1.75rem;
+      }
+      .prose h3 {
+        font-family: "Playfair Display", serif;
+        color: #264a35;
+        margin-top: 1.5em;
+        margin-bottom: 0.5em;
+        font-weight: 600;
+        font-size: 1.5rem;
+      }
+      .prose p {
+        margin-bottom: 1.25em;
+        line-height: 1.8;
+        color: #4a5568;
+      }
+      .prose ul {
+        list-style-type: disc;
+        padding-left: 1.5em;
+        margin-bottom: 1.25em;
+      }
+      .prose li {
+        margin-bottom: 0.5em;
+        color: #4a5568;
+      }
+      .prose strong {
+        color: #264a35;
+        font-weight: 600;
+      }
+      .doodle-line {
+        height: 8px;
+        background-image: url("data:image/svg+xml,%3Csvg width='100' height='12' viewBox='0 0 100 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 10C15.5 2.5 25.5 2.5 35 10C45.5 17.5 55.5 2.5 65 10C75.5 17.5 85.5 2.5 98 10' stroke='%23d4af37' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: left center;
+        margin: 1rem 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header Compacto -->
+    <header class="glass-nav sticky top-0 z-50 shadow-md">
+      <div
+        class="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <a href="../../index.html" class="flex items-center gap-3">
+          <img
+            src="../../img/logo.png"
+            alt="Logo MLM Abogados"
+            class="h-10 w-10 object-contain bg-brand-main p-1 rounded-lg border border-brand-accent"
+          />
+          <span class="text-white font-serif font-bold text-lg hidden sm:block"
+            >MLM <span class="text-brand-accent">Abogados</span></span
+          >
+        </a>
+        <nav class="flex gap-6 text-sm font-medium text-white/90">
+          <a
+            href="../../index.html"
+            class="hover:text-brand-accent transition-colors"
+            >Inicio</a
+          >
+          <a
+            href="../index.html"
+            class="hover:text-brand-accent transition-colors font-bold text-brand-accent"
+            >Blog</a
+          >
+          <a
+            href="../../index.html#contacto"
+            class="hover:text-brand-accent transition-colors"
+            >Contacto</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12 max-w-4xl">
+      <!-- Breadcrumb -->
+      <div class="text-sm text-gray-500 mb-8 font-soft">
+        <a href="../../index.html" class="hover:text-brand-main">Inicio</a>
+        <i class="fas fa-chevron-right text-xs mx-2"></i>
+        <a href="../index.html" class="hover:text-brand-main">Blog</a>
+        <i class="fas fa-chevron-right text-xs mx-2"></i>
+        <span class="text-brand-main font-semibold">Título del Artículo</span>
+      </div>
+
+      <!-- Article Content -->
+      <article
+        class="bg-white rounded-3xl shadow-xl p-8 md:p-12 border border-gray-100"
+      >
+        <header class="mb-10">
+          <span
+            class="bg-brand-softGreen text-brand-main px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-4 inline-block"
+            >Categoría</span
+          >
+          <h1
+            class="font-serif text-3xl md:text-5xl font-bold text-brand-main mb-6 leading-tight"
+          >
+            Título Principal del Artículo Optimizado para SEO
+          </h1>
+          <div
+            class="flex items-center gap-4 text-gray-500 text-sm font-soft border-b border-gray-100 pb-8"
+          >
+            <div class="flex items-center gap-2">
+              <div
+                class="w-8 h-8 rounded-full bg-brand-main text-brand-accent flex items-center justify-center font-bold font-serif text-xs"
+              >
+                NP
+              </div>
+              <span>Por Nicoll Pineda</span>
+            </div>
+            <span>•</span>
+            <span
+              ><i class="far fa-calendar-alt mr-1"></i> Fecha Publicación</span
+            >
+            <span>•</span>
+            <span><i class="far fa-clock mr-1"></i> 5 min lectura</span>
+          </div>
+        </header>
+
+        <!-- Body -->
+        <div class="prose max-w-none font-sans text-lg">
+          <p class="lead text-xl text-gray-600 mb-8 italic font-serif">
+            Introduction hook goes here. Summary of what the user will learn.
+          </p>
+
+          <!-- Content Placeholders -->
+          <h2>Subtítulo H2 Relevante</h2>
+          <div class="doodle-line opacity-60"></div>
+          <p>Contenido del párrafo...</p>
+
+          <h3>Subtítulo H3 Detallado</h3>
+          <p>Más contenido...</p>
+          <ul>
+            <li>Punto clave 1</li>
+            <li>Punto clave 2</li>
+          </ul>
+
+          <div
+            class="bg-brand-softGreen/50 p-6 rounded-2xl my-8 border-l-4 border-brand-main"
+          >
+            <p class="mb-0 text-brand-main font-medium">
+              <i class="fas fa-info-circle mr-2"></i>
+              <strong>Dato Importante:</strong> Highlight box for key takeaways.
+            </p>
+          </div>
+        </div>
+
+        <!-- CTA Interno -->
+        <div
+          class="mt-16 bg-brand-main text-white p-8 rounded-2xl text-center relative overflow-hidden"
+        >
+          <div
+            class="absolute inset-0 bg-brand-accent opacity-10 pattern-dots"
+          ></div>
+          <h3 class="font-serif text-2xl font-bold mb-4 relative z-10">
+            ¿Necesitas asesoría legal en este tema?
+          </h3>
+          <p class="mb-6 text-white/80 font-soft relative z-10">
+            Nuestro equipo experto en Ley TEA está listo para orientarte.
+          </p>
+          <a
+            href="https://wa.me/56944019879"
+            target="_blank"
+            class="inline-block bg-brand-accent text-brand-main font-bold py-3 px-8 rounded-full hover:bg-white transition-colors shadow-lg relative z-10"
+          >
+            <i class="fab fa-whatsapp mr-2"></i> Agendar Consulta
+          </a>
+        </div>
+      </article>
+    </main>
+
+    <footer
+      class="bg-brand-main text-white py-8 border-t-8 border-brand-accent mt-12"
+    >
+      <div class="container mx-auto px-6 text-center">
+        <p class="text-brand-accent font-serif text-lg mb-2 italic">
+          Ética, Empatía y Experiencia
+        </p>
+        <p class="text-gray-400 text-sm font-soft">
+          MLM Abogados | Calera de Tango, Chile.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

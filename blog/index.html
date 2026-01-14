@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Legal Ley TEA y Familia | MLM Abogados</title>
+    <meta name="description" content="Artículos y guías sobre Ley TEA, Derechos de Salud, Inclusión Escolar y Familia. Asesoría legal experta en Chile.">
+    
+    <link rel="icon" type="image/png" href="../img/favicon.png">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            main: '#264A35',
+                            light: '#3E6B50',
+                            accent: '#d4af37',
+                            cream: '#F9F9F6',
+                            softGreen: '#E8F5E9',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                        soft: ['Quicksand', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #F9F9F6; }
+        .article-card { transition: all 0.3s ease; }
+        .article-card:hover { transform: translateY(-5px); }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="bg-brand-main text-white sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="../index.html" class="flex items-center gap-2 group">
+                <div class="bg-white/10 p-2 rounded-lg group-hover:bg-white/20 transition">
+                    <img src="../img/logo.png" alt="MLM" class="h-8 w-8 object-contain">
+                </div>
+                <span class="font-serif font-bold text-lg hidden sm:block">MLM <span class="text-brand-accent">Blog</span></span>
+            </a>
+            <nav class="flex gap-6 text-sm font-medium">
+                <a href="../index.html" class="hover:text-brand-accent transition-colors opacity-90 hover:opacity-100">Volver al Inicio</a>
+                <a href="#articulos" class="text-brand-accent font-bold">Artículos</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Blog Hero -->
+    <section class="bg-brand-main text-white py-20 relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('../img/clean-pattern.png')] opacity-10"></div>
+        <div class="absolute bottom-0 right-0 opacity-10 transform translate-y-10 translate-x-10">
+            <i class="fas fa-book-open text-9xl"></i>
+        </div>
+        
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <span class="text-brand-accent font-bold tracking-widest uppercase text-xs mb-4 block">Recursos Legales</span>
+            <h1 class="font-serif text-4xl md:text-6xl font-bold mb-6">Blog & Actualidad Legal</h1>
+            <p class="text-xl text-gray-200 max-w-2xl mx-auto font-light font-soft">
+                Información clara y experta sobre Ley TEA, derechos de salud y protección familiar en Chile.
+            </p>
+        </div>
+    </section>
+
+    <!-- Articles Grid -->
+    <section id="articulos" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                
+                <!-- Artículo 1 -->
+                <article class="article-card bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 flex flex-col h-full group">
+                    <div class="h-48 bg-brand-main relative overflow-hidden">
+                        <div class="absolute inset-0 bg-brand-main opacity-90 group-hover:opacity-100 transition-opacity"></div>
+                        <i class="fas fa-balance-scale text-6xl text-brand-accent absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-30 group-hover:scale-110 transition-transform"></i>
+                        <span class="absolute top-4 left-4 bg-brand-accent text-brand-main text-xs font-bold px-3 py-1 rounded-full z-10">Legislación</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="font-serif text-xl font-bold text-brand-main mb-3 leading-tight group-hover:text-brand-light transition-colors">
+                            <a href="articulos/ley-tea-derechos-chile.html">Ley TEA (21.545): Guía completa de tus derechos</a>
+                        </h3>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-3 font-soft flex-1">
+                            Descubre los pilares de la nueva Ley TEA en Chile: atención integral, derechos en salud pública/privada y garantías de inclusión escolar.
+                        </p>
+                        <a href="articulos/ley-tea-derechos-chile.html" class="text-brand-accent font-bold hover:underline text-sm uppercase tracking-wide">Leer artículo &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- Artículo 2 -->
+                <article class="article-card bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 flex flex-col h-full group">
+                    <div class="h-48 bg-brand-light relative overflow-hidden">
+                         <div class="absolute inset-0 bg-brand-light opacity-90"></div>
+                         <i class="fas fa-notes-medical text-6xl text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-30 group-hover:scale-110 transition-transform"></i>
+                         <span class="absolute top-4 left-4 bg-brand-accent text-brand-main text-xs font-bold px-3 py-1 rounded-full z-10">Salud</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="font-serif text-xl font-bold text-brand-main mb-3 leading-tight group-hover:text-brand-light transition-colors">
+                            <a href="articulos/cobertura-isapre-fonasa-tea.html">¿Cobertura Rechazada? Isapres, Fonasa y Ley TEA</a>
+                        </h3>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-3 font-soft flex-1">
+                            Que no te digan que "no cubre". Aprende sobre los topes anuales abusivos y cómo el Recurso de Protección puede financiar las terapias de tu hijo.
+                        </p>
+                        <a href="articulos/cobertura-isapre-fonasa-tea.html" class="text-brand-accent font-bold hover:underline text-sm uppercase tracking-wide">Leer artículo &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- Artículo 3 -->
+                <article class="article-card bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 flex flex-col h-full group">
+                    <div class="h-48 bg-gray-800 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-brand-main mix-blend-multiply"></div>
+                        <i class="fas fa-gavel text-6xl text-brand-accent absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-30 group-hover:scale-110 transition-transform"></i>
+                        <span class="absolute top-4 left-4 bg-brand-accent text-brand-main text-xs font-bold px-3 py-1 rounded-full z-10">Defensa</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="font-serif text-xl font-bold text-brand-main mb-3 leading-tight group-hover:text-brand-light transition-colors">
+                            <a href="articulos/amparo-proteccion-legal-tea.html">Recurso de Protección en casos TEA</a>
+                        </h3>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-3 font-soft flex-1">
+                            La herramienta judicial más efectiva ante discriminación escolar o abusos de Isapres. Cuándo usarlo y por qué los plazos son vitales.
+                        </p>
+                        <a href="articulos/amparo-proteccion-legal-tea.html" class="text-brand-accent font-bold hover:underline text-sm uppercase tracking-wide">Leer artículo &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- Artículo 4 -->
+                <article class="article-card bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 flex flex-col h-full group">
+                    <div class="h-48 bg-blue-900 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-brand-main opacity-80"></div>
+                        <i class="fas fa-school text-6xl text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-30 group-hover:scale-110 transition-transform"></i>
+                        <span class="absolute top-4 left-4 bg-brand-accent text-brand-main text-xs font-bold px-3 py-1 rounded-full z-10">Educación</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="font-serif text-xl font-bold text-brand-main mb-3 leading-tight group-hover:text-brand-light transition-colors">
+                            <a href="articulos/inclusion-escolar-discriminacion.html">Inclusión Escolar: Protocolos y derechos</a>
+                        </h3>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-3 font-soft flex-1">
+                            ¿Problemas con el PIE o matrícula? Conoce qué hacer si el colegio discrimina a tu hijo/a o reduce arbitrariamente su jornada.
+                        </p>
+                        <a href="articulos/inclusion-escolar-discriminacion.html" class="text-brand-accent font-bold hover:underline text-sm uppercase tracking-wide">Leer artículo &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- Artículo 5 -->
+                <article class="article-card bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 flex flex-col h-full group">
+                    <div class="h-48 bg-purple-900 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-brand-light opacity-90"></div>
+                        <i class="fas fa-id-card text-6xl text-brand-accent absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-30 group-hover:scale-110 transition-transform"></i>
+                        <span class="absolute top-4 left-4 bg-brand-accent text-brand-main text-xs font-bold px-3 py-1 rounded-full z-10">Trámites</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="font-serif text-xl font-bold text-brand-main mb-3 leading-tight group-hover:text-brand-light transition-colors">
+                            <a href="articulos/credencial-discapacidad-tea.html">Credencial de Discapacidad: ¿Por qué tramitarla?</a>
+                        </h3>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-3 font-soft flex-1">
+                            Derribando mitos: la credencial no estigmatiza, protege. Accede a becas, subsidios y atención preferente en salud.
+                        </p>
+                        <a href="articulos/credencial-discapacidad-tea.html" class="text-brand-accent font-bold hover:underline text-sm uppercase tracking-wide">Leer artículo &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- Artículo 6 -->
+                <article class="article-card bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 flex flex-col h-full group">
+                    <div class="h-48 bg-teal-800 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-brand-main opacity-80"></div>
+                        <i class="fas fa-puzzle-piece text-6xl text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-30 group-hover:scale-110 transition-transform"></i>
+                        <span class="absolute top-4 left-4 bg-brand-accent text-brand-main text-xs font-bold px-3 py-1 rounded-full z-10">Terapias</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="font-serif text-xl font-bold text-brand-main mb-3 leading-tight group-hover:text-brand-light transition-colors">
+                            <a href="articulos/cobertura-terapias-aba-fonoaudiologia.html">Cobertura de Terapias ABA y Fonoaudiología</a>
+                        </h3>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-3 font-soft flex-1">
+                            Análisis legal sobre la cobertura de terapias "no codificadas" y cómo lograr su reembolso en el sistema de salud.
+                        </p>
+                        <a href="articulos/cobertura-terapias-aba-fonoaudiologia.html" class="text-brand-accent font-bold hover:underline text-sm uppercase tracking-wide">Leer artículo &rarr;</a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter / Contact CTA -->
+    <section class="bg-brand-softGreen py-16">
+        <div class="container mx-auto px-6 text-center max-w-3xl">
+            <h2 class="font-serif text-3xl font-bold text-brand-main mb-4">¿No encuentras lo que buscas?</h2>
+            <p class="text-gray-600 mb-8 font-soft">Escríbenos directamente para evaluar tu caso.</p>
+            <a href="https://wa.me/56944019879" class="inline-block bg-brand-main text-white font-bold py-3 px-8 rounded-full hover:bg-brand-light shadow-lg transition-transform hover:scale-105">
+                <i class="fab fa-whatsapp mr-2"></i> Contáctanos
+            </a>
+        </div>
+    </section>
+
+    <footer class="bg-brand-main text-white py-12 border-t border-brand-accent/20">
+        <div class="container mx-auto px-6 text-center">
+            <p class="font-serif italic text-brand-accent mb-2">MLM Abogados</p>
+            <p class="text-xs text-gray-500">&copy; 2025 Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

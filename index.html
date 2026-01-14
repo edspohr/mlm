@@ -202,6 +202,10 @@
                     Áreas & Enfoque
                     <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-accent transition-all group-hover:w-full rounded-full"></span>
                 </a>
+                <a href="blog/index.html" class="text-white/90 text-sm uppercase tracking-wider font-bold hover:text-brand-accent transition-colors relative group font-soft">
+                    Blog <span class="text-brand-accent text-xs align-top">Nuevo</span>
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-accent transition-all group-hover:w-full rounded-full"></span>
+                </a>
                 <a href="#contacto" class="bg-brand-accent text-brand-main px-6 py-2 rounded-full font-bold hover:bg-white transition-all shadow-md hover:shadow-xl transform hover:-translate-y-0.5 font-soft flex items-center gap-2">
                     <span>Contacto</span>
                     <i class="fas fa-paper-plane text-xs"></i>
@@ -268,7 +272,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-14 max-w-7xl mx-auto">
                     
                     <!-- Círculo 1: Cliente -->
-                    <div class="circle-container text-center group reveal-on-scroll">
+                    <div class="circle-container text-center group reveal-on-scroll cursor-pointer" onclick="window.location.href='areas/cliente.html'">
                         <div class="relative mx-auto w-48 h-48 mb-8">
                             <div class="absolute inset-0 bg-brand-main rounded-full opacity-5 group-hover:scale-110 transition-transform duration-500"></div>
                             <!-- Icono con borde orgánico -->
@@ -276,16 +280,17 @@
                                 <i class="fas fa-hand-holding-heart text-6xl text-brand-main"></i>
                             </div>
                         </div>
-                        <h3 class="font-serif text-2xl font-bold text-brand-main mb-4">Cliente</h3>
+                        <h3 class="font-serif text-2xl font-bold text-brand-main mb-4 group-hover:text-brand-light transition-colors">Cliente</h3>
                         <!-- Línea curva pequeña -->
                         <div class="w-16 h-3 bg-[url('data:image/svg+xml,%3Csvg%20width=\'64\'%20height=\'12\'%20viewBox=\'0%200%2064%2012\'%20fill=\'none\'%20xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath%20d=\'M2%206C12%202%2020%202%2032%206C44%2010%2052%2010%2062%206\'%20stroke=\'%23d4af37\'%20stroke-width=\'3\'%20stroke-linecap=\'round\'/%3E%3C/svg%3E')] bg-no-repeat bg-center mx-auto mb-4 opacity-60"></div>
                         <p class="text-gray-600 leading-relaxed px-4 font-soft">
                             Con acompañamiento, lato conocimiento y experiencia interdisciplinaria; siempre promoviendo el <strong>consentimiento informado</strong>.
                         </p>
+                        <a href="areas/cliente.html" class="inline-block mt-4 text-brand-accent font-bold text-sm uppercase tracking-wider hover:underline opacity-0 group-hover:opacity-100 transition-opacity">Ver Detalles &rarr;</a>
                     </div>
 
                     <!-- Círculo 2: Familias -->
-                    <div class="circle-container text-center group reveal-on-scroll" style="transition-delay: 150ms;">
+                    <div class="circle-container text-center group reveal-on-scroll cursor-pointer" style="transition-delay: 150ms;" onclick="window.location.href='areas/familias.html'">
                         <div class="relative mx-auto w-48 h-48 mb-8">
                             <div class="absolute inset-0 bg-brand-main rounded-full opacity-5 group-hover:scale-110 transition-transform duration-500"></div>
                             <div class="circle-icon w-full h-full border-2 border-brand-main/20 bg-white flex items-center justify-center shadow-xl z-10 relative">
@@ -293,26 +298,28 @@
                                 <i class="fas fa-puzzle-piece text-6xl text-brand-main transform rotate-12"></i>
                             </div>
                         </div>
-                        <h3 class="font-serif text-2xl font-bold text-brand-main mb-4">Familias</h3>
+                        <h3 class="font-serif text-2xl font-bold text-brand-main mb-4 group-hover:text-brand-light transition-colors">Familias</h3>
                         <div class="w-16 h-3 bg-[url('data:image/svg+xml,%3Csvg%20width=\'64\'%20height=\'12\'%20viewBox=\'0%200%2064%2012\'%20fill=\'none\'%20xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath%20d=\'M2%206C12%202%2020%202%2032%206C44%2010%2052%2010%2062%206\'%20stroke=\'%23d4af37\'%20stroke-width=\'3\'%20stroke-linecap=\'round\'/%3E%3C/svg%3E')] bg-no-repeat bg-center mx-auto mb-4 opacity-60"></div>
                         <p class="text-gray-600 leading-relaxed px-4 font-soft">
                             Asesorías a familias ante falta de inclusión en <strong>educación y salud</strong> de NNA, protección de derechos y Ley TEA.
                         </p>
+                        <a href="areas/familias.html" class="inline-block mt-4 text-brand-accent font-bold text-sm uppercase tracking-wider hover:underline opacity-0 group-hover:opacity-100 transition-opacity">Ver Detalles &rarr;</a>
                     </div>
 
                     <!-- Círculo 3: Corporativo -->
-                    <div class="circle-container text-center group reveal-on-scroll" style="transition-delay: 300ms;">
+                    <div class="circle-container text-center group reveal-on-scroll cursor-pointer" style="transition-delay: 300ms;" onclick="window.location.href='areas/corporativo.html'">
                         <div class="relative mx-auto w-48 h-48 mb-8">
                             <div class="absolute inset-0 bg-brand-main rounded-full opacity-5 group-hover:scale-110 transition-transform duration-500"></div>
                             <div class="circle-icon w-full h-full border-2 border-brand-main/20 bg-white flex items-center justify-center shadow-xl z-10 relative">
                                 <i class="fas fa-briefcase text-6xl text-brand-main"></i>
                             </div>
                         </div>
-                        <h3 class="font-serif text-2xl font-bold text-brand-main mb-4">Corporativo</h3>
+                        <h3 class="font-serif text-2xl font-bold text-brand-main mb-4 group-hover:text-brand-light transition-colors">Corporativo</h3>
                         <div class="w-16 h-3 bg-[url('data:image/svg+xml,%3Csvg%20width=\'64\'%20height=\'12\'%20viewBox=\'0%200%2064%2012\'%20fill=\'none\'%20xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath%20d=\'M2%206C12%202%2020%202%2032%206C44%2010%2052%2010%2062%206\'%20stroke=\'%23d4af37\'%20stroke-width=\'3\'%20stroke-linecap=\'round\'/%3E%3C/svg%3E')] bg-no-repeat bg-center mx-auto mb-4 opacity-60"></div>
                         <p class="text-gray-600 leading-relaxed px-4 font-soft">
                             Implementación de <strong>Ley Karin y Ley TEA</strong>, confección de protocolos y representación judicial experta.
                         </p>
+                        <a href="areas/corporativo.html" class="inline-block mt-4 text-brand-accent font-bold text-sm uppercase tracking-wider hover:underline opacity-0 group-hover:opacity-100 transition-opacity">Ver Detalles &rarr;</a>
                     </div>
 
                 </div>
@@ -376,8 +383,68 @@
             </div>
         </section>
 
+        </section>
+
+        <!-- ========== BLOG SECTION (NOVEDADES) ========== -->
+        <section class="py-24 bg-stone-200 relative">
+             <div class="container mx-auto px-6">
+                <div class="text-center mb-16 reveal-on-scroll">
+                    <span class="text-brand-accent font-bold tracking-widest uppercase text-sm font-soft">Actualidad Legal</span>
+                    <h2 class="font-serif text-4xl md:text-5xl font-bold text-brand-main mt-2 mb-4">Desde Nuestro Blog</h2>
+                    <div class="doodle-line"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                    <!-- Art 1 -->
+                    <article class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-shadow border border-gray-100 reveal-on-scroll cursor-pointer group" onclick="window.location.href='blog/articulos/ley-tea-derechos-chile.html'">
+                        <div class="h-48 bg-brand-main relative">
+                            <span class="absolute top-4 left-4 bg-brand-accent text-brand-main text-xs font-bold px-3 py-1 rounded-full">Ley TEA</span>
+                            <i class="fas fa-balance-scale absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white/20 text-6xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-serif text-xl font-bold text-brand-main mb-3 leading-snug"><a href="blog/articulos/ley-tea-derechos-chile.html" class="hover:text-brand-light">Ley TEA: Guía completa de derechos</a></h3>
+                            <p class="text-gray-600 text-sm mb-4 font-soft">Conoce los pilares de la Ley 21.545 y cómo garantiza la atención integral.</p>
+                            <a href="blog/articulos/ley-tea-derechos-chile.html" class="text-brand-accent font-bold text-sm hover:underline">Leer más &rarr;</a>
+                        </div>
+                    </article>
+
+                    <!-- Art 2 -->
+                    <article class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-shadow border border-gray-100 reveal-on-scroll cursor-pointer group" style="transition-delay: 100ms;" onclick="window.location.href='blog/articulos/cobertura-isapre-fonasa-tea.html'">
+                        <div class="h-48 bg-brand-light relative">
+                            <span class="absolute top-4 left-4 bg-brand-accent text-brand-main text-xs font-bold px-3 py-1 rounded-full">Salud</span>
+                            <i class="fas fa-notes-medical absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white/20 text-6xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-serif text-xl font-bold text-brand-main mb-3 leading-snug"><a href="blog/articulos/cobertura-isapre-fonasa-tea.html" class="hover:text-brand-light">Cobertura Isapres y Fonasa</a></h3>
+                            <p class="text-gray-600 text-sm mb-4 font-soft">¿Rechazo de cobertura? Aprende cómo defender el tratamiento de tu hijo.</p>
+                            <a href="blog/articulos/cobertura-isapre-fonasa-tea.html" class="text-brand-accent font-bold text-sm hover:underline">Leer más &rarr;</a>
+                        </div>
+                    </article>
+
+                    <!-- Art 3 -->
+                    <article class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-shadow border border-gray-100 reveal-on-scroll cursor-pointer group" style="transition-delay: 200ms;" onclick="window.location.href='blog/articulos/inclusion-escolar-discriminacion.html'">
+                        <div class="h-48 bg-gray-800 relative">
+                            <span class="absolute top-4 left-4 bg-brand-accent text-brand-main text-xs font-bold px-3 py-1 rounded-full">Educación</span>
+                            <i class="fas fa-school absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white/20 text-6xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-serif text-xl font-bold text-brand-main mb-3 leading-snug"><a href="blog/articulos/inclusion-escolar-discriminacion.html" class="hover:text-brand-light">Inclusión Escolar y Discriminación</a></h3>
+                            <p class="text-gray-600 text-sm mb-4 font-soft">Protocolos ante discriminación en colegios y derechos del programa PIE.</p>
+                            <a href="blog/articulos/inclusion-escolar-discriminacion.html" class="text-brand-accent font-bold text-sm hover:underline">Leer más &rarr;</a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="text-center mt-12">
+                    <a href="blog/index.html" class="inline-block border-2 border-brand-main text-brand-main font-bold py-3 px-8 rounded-full hover:bg-brand-main hover:text-white transition-colors font-soft">
+                        Ver todos los artículos
+                    </a>
+                </div>
+             </div>
+        </section>
+
         <!-- ========== CALL TO ACTION (CONTACTO) ========== -->
-        <section id="contacto" class="py-24 bg-brand-cream relative overflow-hidden">
+        <section id="contacto" class="py-24 bg-white relative overflow-hidden">
              <!-- Decoración sutil de fondo -->
              <div class="absolute right-0 bottom-0 opacity-5 text-brand-main transform rotate-[-15deg] translate-x-10 translate-y-10">
                 <i class="fas fa-paper-plane text-[20rem]"></i>
@@ -420,7 +487,11 @@
                 <img src="img/logo.png" alt="Logo MLM" style="height: 80px; width: auto;">
             </div>
             <p class="text-brand-accent font-serif text-lg mb-2 italic">Ética, Empatía y Experiencia</p>
-            <p class="text-gray-400 text-sm font-soft">MLM Abogados | Calera de Tango, Chile.</p>
+            <div class="flex justify-center gap-4 mb-4 text-sm font-soft">
+                <a href="blog/index.html" class="text-gray-400 hover:text-brand-accent transition-colors">Blog Legal</a>
+                <span class="text-gray-600">|</span>
+                <span class="text-gray-400">MLM Abogados | Calera de Tango, Chile.</span>
+            </div>
             <div class="mt-8 text-xs text-gray-500 font-soft">
                 &copy; 2025 MLM Abogados. Todos los derechos reservados.
             </div>
